@@ -4,26 +4,54 @@
 		<meta charset=utf-8 />
 		<title>Bandung Choropleth Map</title>
 		<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-		<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
-		<style>
+		<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+
+		<style type="text/css">
 			body {
-				margin:0; padding:0;
+				font-family: 'PT Sans', sans-serif;
 			}
+
 			#map {
-				position:absolute;
-				top:0;
-				bottom:0;
-				width:100%;
-				height: 50%;
+				width: 100%;
+				height: 500px;
 			}
 		</style>
+
 	</head>
 	<body>
-		<div id='map'></div>
+		
+		<div class="container">
+			<div class="page-header">
+				<h1>Bandung Choropleth Map</h1>
+			</div>
+
+			<div id="map">
+			</div>
+			<hr>
+			<h3>Kecamatan Coblong</h3>
+			<div style="width: 350px;">
+				<table class="table">
+					<tr>
+						<td>Luas Wilayah</td>
+						<td>:</td>
+						<td>3,7 Km2</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+
+		<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script src="basemap.js"></script>
 		<script>
 			L.mapbox.accessToken = 'pk.eyJ1IjoidHJ5ZmF0dXIiLCJhIjoiY2lxdDJ5d3R1MDAydmZybmh3a3VtcmFvMiJ9.lL9RoXOtTscOHiSvOCrL-Q';
-			var map = L.mapbox.map('map', 'mapbox.streets').setView([-6.958672, 107.634450], 14);
+			var map = L.mapbox.map('map', 'mapbox.streets').setView([-6.938458, 107.644381], 13);
+
+			L.mapbox.featureLayer().loadURL('bf18d122d2e9db7dbcac7a45953f49ab/map.geojson').addTo(map);
 		</script>
 	</body>
 </html>
