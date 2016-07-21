@@ -15,7 +15,20 @@
 
 			#map {
 				width: 100%;
-				height: 500px;
+				height: 550px;
+			}
+
+			.info {
+				padding: 6px 8px;
+				font: 14px/16px Arial, Helvetica, sans-serif;
+				background: white;
+				background: rgba(255,255,255,0.8);
+				box-shadow: 0 0 15px rgba(0,0,0,0.2);
+				border-radius: 5px;
+			}
+			.info h4 {
+				margin: 0 0 5px;
+				color: #777;
 			}
 		</style>
 
@@ -26,21 +39,8 @@
 			<div class="page-header">
 				<h1>Bandung Choropleth Map</h1>
 			</div>
-
-			<div id="map">
-			</div>
-			<hr>
-			<h3>Kecamatan Coblong</h3>
-			<div style="width: 350px;">
-				<table class="table">
-					<tr>
-						<td>Luas Wilayah</td>
-						<td>:</td>
-						<td>3,7 Km2</td>
-					</tr>
-				</table>
-			</div>
 		</div>
+		<div id="map">
 
 
 		<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
@@ -49,9 +49,89 @@
 		<script src="basemap.js"></script>
 		<script>
 			L.mapbox.accessToken = 'pk.eyJ1IjoidHJ5ZmF0dXIiLCJhIjoiY2lxdDJ5d3R1MDAydmZybmh3a3VtcmFvMiJ9.lL9RoXOtTscOHiSvOCrL-Q';
-			var map = L.mapbox.map('map', 'mapbox.streets').setView([-6.938458, 107.644381], 13);
+			var map              = L.mapbox.map('map').setView([-6.896462, 107.609290], 13);
+			var info             = L.control();
+			var geojson;
 
-			L.mapbox.featureLayer().loadURL('bf18d122d2e9db7dbcac7a45953f49ab/map.geojson').addTo(map);
+			L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' + L.mapbox.accessToken, {
+			    id: 'mapbox.light'
+			}).addTo(map);
+
+			info.onAdd = function (map) {
+			    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+			    this.update();
+			    return this._div;
+			};
+
+			// method that we will use to update the control based on feature properties passed
+			info.update = function (props) {
+			    this._div.innerHTML = '<h4>Tingkat Kepadatan Populasi Kota Bandung</h4>' +  (props ?
+			        '<b>' + props._kecamatan + '</b><br />' + props._kepadatan + ' jiwa / km<sup>2</sup>'
+			        : 'Pilih Kecamatan');
+			};
+
+			info.addTo(map);
+
+			function getColor(d) {
+			    return d > 35000 ? '#8C2D04' :
+			           d > 30000 ? '#CC4C02' :
+			           d > 25000 ? '#EC7014' :
+			           d > 20000 ? '#FE9929' :
+			           d > 15000 ? '#FEC44f' :
+			           d > 10000 ? '#FEE391' :
+			           d > 5000  ? '#FFF7BC' :
+			                       '#FFFFE5';
+			}
+
+			function style(feature) {
+			    return {
+			        fillColor: getColor(feature.properties._kepadatan),
+			        weight: 1,
+			        opacity: 1,
+			        color: 'white',
+			        dashArray: '3',
+			        fillOpacity: 0.7
+			    };
+			}
+
+			function highlightFeature(e) {
+			    var layer = e.target;
+
+			    layer.setStyle({
+			        weight: 5,
+			        color: '#666',
+			        dashArray: '',
+			        fillOpacity: 0.7
+			    });
+
+			    if (!L.Browser.ie && !L.Browser.opera) {
+			        layer.bringToFront();
+			    }
+
+			    info.update(layer.feature.properties);
+			}
+
+			function resetHighlight(e) {
+			    geojson.resetStyle(e.target);
+			    info.update();
+			}
+
+			function zoomToFeature(e) {
+			    map.fitBounds(e.target.getBounds());
+			}
+
+			geojson = L.geoJson(baseMap, {
+			    style: style,
+			    onEachFeature: function onEachFeature(feature, layer) {
+				    layer.on({
+				        mouseover: highlightFeature,
+				        mouseout: resetHighlight,
+				        click: zoomToFeature
+				    });
+				}
+			}).addTo(map);
+
+			map.attributionControl.addAttribution('Data Populasi &copy; <a href="http://data.bandung.go.id/">Portal Data Bandung</a>');
 		</script>
 	</body>
 </html>
