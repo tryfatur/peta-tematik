@@ -5,7 +5,8 @@ var baseMap = {
       "type": "Feature",
       "properties": {
         "_kecamatan": "Cicendo",
-        "_kepadatan": 15522
+        "_kepadatan": 15522,
+        "_url": "cicendo"
       },
       "geometry": {
         "type": "Polygon",
@@ -688,6 +689,7 @@ var baseMap = {
       "properties": {
         "_kecamatan": "Sukajadi",
         "_kepadatan": 22973,
+        "_url": "sukajadi"
       },
       "geometry": {
         "type": "Polygon",
@@ -1069,7 +1071,8 @@ var baseMap = {
       "type": "Feature",
       "properties": {
         "_kecamatan": "Coblong",
-        "_kepadatan": 18319
+        "_kepadatan": 18319,
+        "_url": "coblong"
       },
       "geometry": {
         "type": "Polygon",
@@ -2431,7 +2434,8 @@ var baseMap = {
       "type": "Feature",
       "properties": {
         "_kecamatan": "Bandung Wetan",
-        "_kepadatan": 12692
+        "_kepadatan": 12692,
+        "_url": "bandung-wetan"
       },
       "geometry": {
         "type": "Polygon",
@@ -2881,7 +2885,8 @@ var baseMap = {
       "type": "Feature",
       "properties": {
         "_kecamatan": "Cibeunying Kaler",
-        "_kepadatan": 16931
+        "_kepadatan": 16931,
+        "_url": "cibeunying-kaler"
       },
       "geometry": {
         "type": "Polygon",
@@ -3839,7 +3844,8 @@ var baseMap = {
       "type": "Feature",
       "properties": {
         "_kecamatan": "Sumur Bandung",
-        "_kepadatan": 13802
+        "_kepadatan": 13802,
+        "_url": "sumur-bandung"
       },
       "geometry": {
         "type": "Polygon",
@@ -4093,7 +4099,8 @@ var baseMap = {
       "type": "Feature",
       "properties": {
         "_kecamatan": "Andir",
-        "_kepadatan": 34936
+        "_kepadatan": 34936,
+        "_url": "andir"
       },
       "geometry": {
         "type": "Polygon",

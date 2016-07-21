@@ -6,6 +6,7 @@
 		<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+		<link rel="stylesheet" type="text/css" href="assets/easy-autocomplete.min.css">
 		<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 
 		<style type="text/css">
@@ -39,13 +40,21 @@
 			<div class="page-header">
 				<h1>Bandung Choropleth Map</h1>
 			</div>
+			<div id="map"></div>
+			<hr>
+			<div id="statistik"></div>
+			<hr>
+			<div class="text-muted text-right">
+				<p>@tryfatur &#149; Bandung Choropleth Map &#149; 2016</p>
+			</div>
 		</div>
-		<div id="map">
 
-
-		<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
 		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+		<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script src="assets/jquery.easy-autocomplete.min.js"></script>
+		<script src="http://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/highcharts-3d.js"></script>
 		<script src="basemap.js"></script>
 		<script>
 			L.mapbox.accessToken = 'pk.eyJ1IjoidHJ5ZmF0dXIiLCJhIjoiY2lxdDJ5d3R1MDAydmZybmh3a3VtcmFvMiJ9.lL9RoXOtTscOHiSvOCrL-Q';
@@ -54,84 +63,135 @@
 			var geojson;
 
 			L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' + L.mapbox.accessToken, {
-			    id: 'mapbox.light'
+				id: 'mapbox.light'
 			}).addTo(map);
 
 			info.onAdd = function (map) {
-			    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-			    this.update();
-			    return this._div;
+				this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+				this.update();
+				return this._div;
 			};
 
 			// method that we will use to update the control based on feature properties passed
 			info.update = function (props) {
-			    this._div.innerHTML = '<h4>Tingkat Kepadatan Populasi Kota Bandung</h4>' +  (props ?
-			        '<b>' + props._kecamatan + '</b><br />' + props._kepadatan + ' jiwa / km<sup>2</sup>'
-			        : 'Pilih Kecamatan');
+				this._div.innerHTML = '<h4>Tingkat Kepadatan Populasi Kota Bandung</h4>' +  (props ?
+					'<b>' + props._kecamatan + '</b><br />' + props._kepadatan + ' jiwa / km<sup>2</sup>' : 'Pilih Kecamatan');
 			};
 
 			info.addTo(map);
 
 			function getColor(d) {
-			    return d > 35000 ? '#8C2D04' :
-			           d > 30000 ? '#CC4C02' :
-			           d > 25000 ? '#EC7014' :
-			           d > 20000 ? '#FE9929' :
-			           d > 15000 ? '#FEC44f' :
-			           d > 10000 ? '#FEE391' :
-			           d > 5000  ? '#FFF7BC' :
-			                       '#FFFFE5';
+				return d > 35000 ? '#8C2D04' :
+					   d > 30000 ? '#CC4C02' :
+					   d > 25000 ? '#EC7014' :
+					   d > 20000 ? '#FE9929' :
+					   d > 15000 ? '#FEC44f' :
+					   d > 10000 ? '#FEE391' :
+					   d > 5000  ? '#FFF7BC' :
+								   '#FFFFE5';
 			}
 
 			function style(feature) {
-			    return {
-			        fillColor: getColor(feature.properties._kepadatan),
-			        weight: 1,
-			        opacity: 1,
-			        color: 'white',
-			        dashArray: '3',
-			        fillOpacity: 0.7
-			    };
+				return {
+					fillColor: getColor(feature.properties._kepadatan),
+					weight: 1,
+					opacity: 1,
+					color: 'white',
+					dashArray: '3',
+					fillOpacity: 0.7
+				};
 			}
 
 			function highlightFeature(e) {
-			    var layer = e.target;
+				var layer = e.target;
 
-			    layer.setStyle({
-			        weight: 5,
-			        color: '#666',
-			        dashArray: '',
-			        fillOpacity: 0.7
-			    });
+				layer.setStyle({
+					weight: 5,
+					color: '#666',
+					dashArray: '',
+					fillOpacity: 0.7
+				});
 
-			    if (!L.Browser.ie && !L.Browser.opera) {
-			        layer.bringToFront();
-			    }
+				if (!L.Browser.ie && !L.Browser.opera) {
+					layer.bringToFront();
+				}
 
-			    info.update(layer.feature.properties);
+				info.update(layer.feature.properties);
 			}
 
 			function resetHighlight(e) {
-			    geojson.resetStyle(e.target);
-			    info.update();
+				geojson.resetStyle(e.target);
+				info.update();
 			}
 
 			function zoomToFeature(e) {
-			    map.fitBounds(e.target.getBounds());
+				var kecamatan = e.target.feature.properties._url;
+
+				$.getJSON('data.json', function (result) {
+					for (var i = 0 ; i < result.length; i++) {
+						if (result[i].url == kecamatan) {
+							dataStatistik(result[i]);
+						};
+					}
+				});
+
+				map.fitBounds(e.target.getBounds());
+			}
+
+			function dataStatistik(data) {
+				$(function () {
+					$('#statistik').highcharts({
+						chart: {
+							type: 'line',
+							style: { fontFamily: 'PT Sans'}
+						},
+						title: {
+							text: 'Jumlah Penduduk di Kecamatan ' + data.kecamatan + ' Tahun 2015'
+						},
+						subtitle: {
+							text: 'Sumber: Portal Data Bandung'
+						},
+						plotOptions: {
+							line: {
+								dataLabels: {
+									enabled: true
+								},
+								enableMouseTracking: false
+							}
+						},
+						xAxis: {
+							categories: ['2009', '2010', '2011', '2012', '2013', '2014', '2015']
+						},
+						yAxis: {
+							min: 0,
+							title: {
+								text: 'Jumlah Penduduk'
+							}
+						},
+						legend: {
+							enabled: false
+						},
+						series: [{
+							name: 'Jumlah Penduduk',
+							data: [data.tahun_2009, data.tahun_2010, data.tahun_2011, data.tahun_2012, data.tahun_2013, data.tahun_2014, data.tahun_2015]
+						}]
+					});
+				});
 			}
 
 			geojson = L.geoJson(baseMap, {
-			    style: style,
-			    onEachFeature: function onEachFeature(feature, layer) {
-				    layer.on({
-				        mouseover: highlightFeature,
-				        mouseout: resetHighlight,
-				        click: zoomToFeature
-				    });
+				style: style,
+				onEachFeature: function onEachFeature(feature, layer) {
+					layer.on({
+						mouseover: highlightFeature,
+						mouseout: resetHighlight,
+						click: zoomToFeature
+					});
 				}
 			}).addTo(map);
 
 			map.attributionControl.addAttribution('Data Populasi &copy; <a href="http://data.bandung.go.id/">Portal Data Bandung</a>');
+			map.attributionControl.addAttribution('Try Fathur Rachman &copy;');
 		</script>
 	</body>
 </html>

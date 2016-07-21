@@ -1,0 +1,604 @@
+[
+  {
+    "kecamatan": "Andir",
+    "kelurahan": [
+      "Campaka-40184",
+      "Ciroyom-40182",
+      "Dunguscariang-40183",
+      "Garuda-40184",
+      "Kebonjeruk-40181",
+      "Maleber-40184"
+    ],
+    "tahun_2009": 125175,
+    "tahun_2010": 109663,
+    "tahun_2011": 0,
+    "tahun_2012": 120343,
+    "tahun_2013": 119674,
+    "tahun_2014": 123433,
+    "tahun_2015": 104808,
+    "luas_wilayah": "3,71",
+    "kepadatan": 34936,
+    "url": "andir"
+  },
+  {
+    "kecamatan": "Antapani",
+    "kelurahan": [
+      "Antapani Kidul-40291",
+      "Antapani Kulon-40291",
+      "Antapani Tengah-40291",
+      "Antapani Wetan-40291"
+    ],
+    "tahun_2009": 44750,
+    "tahun_2010": 73760,
+    "tahun_2011": 0,
+    "tahun_2012": 78390,
+    "tahun_2013": 76939,
+    "tahun_2014": 81528,
+    "tahun_2015": 68705,
+    "luas_wilayah": "3,79",
+    "kepadatan": 22901,
+    "url": "antapani"
+  },
+  {
+    "kecamatan": "Arcamanik",
+    "kelurahan": [
+      "Cisaranten Endah-40293",
+      "Cisaranten Kulon-40293",
+      "Cisaranten Bina Harapan-40294",
+      "Sukamiskin-40293"
+    ],
+    "tahun_2009": 77256,
+    "tahun_2010": 67693,
+    "tahun_2011": 0,
+    "tahun_2012": 74493,
+    "tahun_2013": 73725,
+    "tahun_2014": 78982,
+    "tahun_2015": 65494,
+    "luas_wilayah": "5,87",
+    "kepadatan": 13098,
+    "url": "arcamanik"
+  },
+  {
+    "kecamatan": "Astana Anyar",
+    "kelurahan": [
+      "Cibadak-40241",
+      "Karanganyar-40241",
+      "Karasak-40243",
+      "Nyengseret-40242",
+      "Panjunan-40242",
+      "Pelindunghewan-40243"
+    ],
+    "tahun_2009": 82046,
+    "tahun_2010": 79555,
+    "tahun_2011": 0,
+    "tahun_2012": 83700,
+    "tahun_2013": 82884,
+    "tahun_2014": 85923,
+    "tahun_2015": 68048,
+    "luas_wilayah": "2,89",
+    "kepadatan": 34024,
+    "url": "astana-anyar"
+  },
+  {
+    "kecamatan": "Babakan Ciparay",
+    "kelurahan": [
+      "Babakan-40222",
+      "Babakanciparay-40223",
+      "Cirangrang-40227",
+      "Margahayu Utara-40224",
+      "Margasuka-40225",
+      "Sukahaji-40221"
+    ],
+    "tahun_2009": 115230,
+    "tahun_2010": 125050,
+    "tahun_2011": 0,
+    "tahun_2012": 132163,
+    "tahun_2013": 132290,
+    "tahun_2014": 141766,
+    "tahun_2015": 119887,
+    "luas_wilayah": "7,45",
+    "kepadatan": 17126,
+    "url": "babakan-ciparay"
+  },
+  {
+    "kecamatan": "Bandung Kidul",
+    "kelurahan": [
+      "Batununggal-40266",
+      "Batununggal-40287",
+      "Mengger-40267",
+      "Wates-40256"
+    ],
+    "tahun_2009": 52430,
+    "tahun_2010": 56128,
+    "tahun_2011": 0,
+    "tahun_2012": 60288,
+    "tahun_2013": 59590,
+    "tahun_2014": 63293,
+    "tahun_2015": 51173,
+    "luas_wilayah": "6,06",
+    "kepadatan": 8528,
+    "url": "bandung-kidul"
+  },
+  {
+    "kecamatan": "Bandung Kulon",
+    "kelurahan": [
+      "Caringin-40212",
+      "Cibuntu-40212",
+      "Cigondewah-40214",
+      "Cigondewah Kidul-40214",
+      "Cigondewah Rahayu-40215",
+      "Cijerah-40213",
+      "Gempolsari-40215",
+      "Warungmuncang-40211"
+    ],
+    "tahun_2009": 133971,
+    "tahun_2010": 125769,
+    "tahun_2011": 0,
+    "tahun_2012": 140016,
+    "tahun_2013": 137929,
+    "tahun_2014": 147313,
+    "tahun_2015": 120502,
+    "luas_wilayah": "6,46",
+    "kepadatan": 20083,
+    "url": "bandung-kulon"
+  },
+  {
+    "kecamatan": "Bandung Wetan",
+    "kelurahan": [
+      "Cihapit-40114",
+      "Citarum-40115",
+      "Tamansari-40116"
+    ],
+    "tahun_2009": 46488,
+    "tahun_2010": 35510,
+    "tahun_2011": 0,
+    "tahun_2012": 39338,
+    "tahun_2013": 38708,
+    "tahun_2014": 40512,
+    "tahun_2015": 38077,
+    "luas_wilayah": "3,39",
+    "kepadatan": 12692,
+    "url": "bandung-wetan"
+  },
+  {
+    "kecamatan": "Batununggal",
+    "kelurahan": [
+      "Binong-40275",
+      "Cibangkong-40273",
+      "Gumuruh-40275",
+      "Kacapiring-40271",
+      "Kebongedang-40274",
+      "Kebonwaru-40272",
+      "Maleer-40274",
+      "Samoja-40273"
+    ],
+    "tahun_2009": 77266,
+    "tahun_2010": 125490,
+    "tahun_2011": 0,
+    "tahun_2012": 126921,
+    "tahun_2013": 130900,
+    "tahun_2014": 132593,
+    "tahun_2015": 114487,
+    "luas_wilayah": "5,03",
+    "kepadatan": 22897,
+    "url": "batununggal"
+  },
+  {
+    "kecamatan": "Bojongloa Kaler",
+    "kelurahan": [
+      "Babakan Asih-40232",
+      "Babakan Tarogong-40232",
+      "Jamika-40231",
+      "Kopo-40233",
+      "Suka Asih-40231"
+    ],
+    "tahun_2009": 129711,
+    "tahun_2010": 117914,
+    "tahun_2011": 0,
+    "tahun_2012": 125567,
+    "tahun_2013": 124810,
+    "tahun_2014": 130786,
+    "tahun_2015": 110889,
+    "luas_wilayah": "3,03",
+    "kepadatan": 36963,
+    "url": "bojongloa-kaler"
+  },
+  {
+    "kecamatan": "Bojongloa Kidul",
+    "kelurahan": [
+      "Cibaduyut-40236",
+      "Cibaduyut Kidul-40239",
+      "Cibaduyut Wetan-40238",
+      "Kebon Lega-40235",
+      "Mekarwangi-40237",
+      "Situsaeur-40237"
+    ],
+    "tahun_2009": 84844,
+    "tahun_2010": 81303,
+    "tahun_2011": 0,
+    "tahun_2012": 86591,
+    "tahun_2013": 87348,
+    "tahun_2014": 91037,
+    "tahun_2015": 78173,
+    "luas_wilayah": "6,26",
+    "kepadatan": 13028,
+    "url": "bojongloa-kidul"
+  },
+  {
+    "kecamatan": "Buah Batu",
+    "kelurahan": [
+      "Cijawura-40287",
+      "Jatisari-40286",
+      "Margasari-40286",
+      "Sekejati-40287"
+    ],
+    "tahun_2009": 100370,
+    "tahun_2010": 106790,
+    "tahun_2011": 0,
+    "tahun_2012": 111165,
+    "tahun_2013": 113059,
+    "tahun_2014": 107860,
+    "tahun_2015": 100711,
+    "luas_wilayah": "7,93",
+    "kepadatan": 14387,
+    "url": "buah-batu"
+  },
+  {
+    "kecamatan": "Cibeunying Kaler",
+    "kelurahan": [
+      "Cigadung-40191",
+      "Cihaurgeulis-40122",
+      "Neglasari-40124",
+      "Sukaluyu-40123"
+    ],
+    "tahun_2009": 81421,
+    "tahun_2010": 72145,
+    "tahun_2011": 0,
+    "tahun_2012": 75248,
+    "tahun_2013": 75598,
+    "tahun_2014": 77229,
+    "tahun_2015": 67727,
+    "luas_wilayah": "4,5",
+    "kepadatan": 16931,
+    "url": "cibeunying-kaler"
+  },
+  {
+    "kecamatan": "Cibeunying Kidul",
+    "kelurahan": [
+      "Cicadas-40121",
+      "Cikutra-40124",
+      "Padasuka-40125",
+      "Pasirlayung-40192",
+      "Sukamaju-40121",
+      "Sukapada-40125"
+    ],
+    "tahun_2009": 132740,
+    "tahun_2010": 114555,
+    "tahun_2011": 0,
+    "tahun_2012": 119033,
+    "tahun_2013": 120530,
+    "tahun_2014": 122062,
+    "tahun_2015": 101647,
+    "luas_wilayah": "5,25",
+    "kepadatan": 20329,
+    "url": "cibeunying-kidul"
+  },
+  {
+    "kecamatan": "Cibiru",
+    "kelurahan": [
+      "Cipadung-40614",
+      "Cisurupan-40614",
+      "Palasari-40615",
+      "Pasirbiru-40615"
+    ],
+    "tahun_2009": 74151,
+    "tahun_2010": 85048,
+    "tahun_2011": 0,
+    "tahun_2012": 82019,
+    "tahun_2013": 87570,
+    "tahun_2014": 86428,
+    "tahun_2015": 81614,
+    "luas_wilayah": "6,32",
+    "kepadatan": 13602,
+    "url": "cibiru"
+  },
+  {
+    "kecamatan": "Cicendo",
+    "kelurahan": [
+      "Arjuna-40172",
+      "Husen Sastranegara-40174",
+      "Pajajaran-40173",
+      "Pamoyanan-40173",
+      "Pasirkaliki-40171",
+      "Sukaraja-40175"
+    ],
+    "tahun_2009": 70730,
+    "tahun_2010": 105981,
+    "tahun_2011": 0,
+    "tahun_2012": 108834,
+    "tahun_2013": 111757,
+    "tahun_2014": 111217,
+    "tahun_2015": 93133,
+    "luas_wilayah": "6,86",
+    "kepadatan": 15522,
+    "url": "cicendo"
+  },
+  {
+    "kecamatan": "Cidadap",
+    "kelurahan": [
+      "Ciumbuleuit-40142",
+      "Hegarmanah-40141",
+      "Ledeng-40143"
+    ],
+    "tahun_2009": 59965,
+    "tahun_2010": 52250,
+    "tahun_2011": 0,
+    "tahun_2012": 57258,
+    "tahun_2013": 55969,
+    "tahun_2014": 57666,
+    "tahun_2015": 47498,
+    "luas_wilayah": "6,11",
+    "kepadatan": 7916,
+    "url": "cidadap"
+  },
+  {
+    "kecamatan": "Cinambo",
+    "kelurahan": [
+      "Babakan Penghulu-40294",
+      "Cisaranten Wetan-40294",
+      "Pakemitan-40294",
+      "Sukamulya-40294"
+    ],
+    "tahun_2009": 43320,
+    "tahun_2010": 24750,
+    "tahun_2011": 0,
+    "tahun_2012": 26233,
+    "tahun_2013": 26400,
+    "tahun_2014": 27038,
+    "tahun_2015": 22385,
+    "luas_wilayah": "3,68",
+    "kepadatan": 7461,
+    "url": "cinambo"
+  },
+  {
+    "kecamatan": "Coblong",
+    "kelurahan": [
+      "Cipaganti-40131",
+      "Dago-40135",
+      "Lebakgede-40132",
+      "Lebaksiliwangi-40132",
+      "Sadangserang-40133",
+      "Sekeloa-40134"
+    ],
+    "tahun_2009": 130441,
+    "tahun_2010": 123908,
+    "tahun_2011": 0,
+    "tahun_2012": 130270,
+    "tahun_2013": 133208,
+    "tahun_2014": 135655,
+    "tahun_2015": 128239,
+    "luas_wilayah": "7,35",
+    "kepadatan": 18319,
+    "url": "coblong"
+  },
+  {
+    "kecamatan": "Gedebage",
+    "kelurahan": [
+      "Cimincrang-40294",
+      "Cisaranten-40294",
+      "Rancabolang-40294",
+      "Rancanumpang-40294"
+    ],
+    "tahun_2009": 72809,
+    "tahun_2010": 38184,
+    "tahun_2011": 0,
+    "tahun_2012": 40706,
+    "tahun_2013": 41816,
+    "tahun_2014": 42919,
+    "tahun_2015": 35425,
+    "luas_wilayah": "9,58",
+    "kepadatan": 3936,
+    "url": "gedebage"
+  },
+  {
+    "kecamatan": "Kiaracondong",
+    "kelurahan": [
+      "Babakansari-40283",
+      "Babakansurabaya-40281",
+      "Cicaheum-40282",
+      "Kebonkangkung-40283",
+      "Kebunjayanti-40281",
+      "Sukapura-40285"
+    ],
+    "tahun_2009": 131749,
+    "tahun_2010": 125057,
+    "tahun_2011": 0,
+    "tahun_2012": 130657,
+    "tahun_2013": 132597,
+    "tahun_2014": 139019,
+    "tahun_2015": 123778,
+    "luas_wilayah": "6,12",
+    "kepadatan": 20629,
+    "url": "kiaracondong"
+  },
+  {
+    "kecamatan": "Lengkong",
+    "kelurahan": [
+      "Burangrang-40262",
+      "Cijagra-40265",
+      "Cikawao-40261",
+      "Lingkar Selatan-40263",
+      "Malabar-40262",
+      "Paledang-40264",
+      "Turangga-40264"
+    ],
+    "tahun_2009": 90354,
+    "tahun_2010": 87636,
+    "tahun_2011": 0,
+    "tahun_2012": 85959,
+    "tahun_2013": 92055,
+    "tahun_2014": 85425,
+    "tahun_2015": 79206,
+    "luas_wilayah": "5,9",
+    "kepadatan": 15841,
+    "url": "lengkong"
+  },
+  {
+    "kecamatan": "Mandalajati",
+    "kelurahan": [
+      "Jatihandap-40195",
+      "Karangpamulang-40195",
+      "Jatihandap-40195",
+      "Sindangjaya-40195"
+    ],
+    "tahun_2009": 38825,
+    "tahun_2010": 70373,
+    "tahun_2011": 0,
+    "tahun_2012": 70229,
+    "tahun_2013": 73531,
+    "tahun_2014": 74220,
+    "tahun_2015": 67128,
+    "luas_wilayah": "6,67",
+    "kepadatan": 11188,
+    "url": "mandalajati"
+  },
+  {
+    "kecamatan": "Panyileukan",
+    "kelurahan": [
+      "Cipadung Kidul-40614",
+      "Cipadung Kulon-40614",
+      "Cipadung Wetan-40614",
+      "Mekarmulya-40614"
+    ],
+    "tahun_2009": 25231,
+    "tahun_2010": 37598,
+    "tahun_2011": 0,
+    "tahun_2012": 39729,
+    "tahun_2013": 39991,
+    "tahun_2014": 40955,
+    "tahun_2015": 35778,
+    "luas_wilayah": "5,1",
+    "kepadatan": 7155,
+    "url": "panyileukan"
+  },
+  {
+    "kecamatan": "Rancasari",
+    "kelurahan": [
+      "Cipamokolan-40292",
+      "Darwati-40292",
+      "Manjahlega-40295",
+      "Mekarmulya-40292"
+    ],
+    "tahun_2009": 99001,
+    "tahun_2010": 86947,
+    "tahun_2011": 0,
+    "tahun_2012": 86362,
+    "tahun_2013": 92944,
+    "tahun_2014": 93642,
+    "tahun_2015": 81950,
+    "luas_wilayah": "7,33",
+    "kepadatan": 11707,
+    "url": "rancasari"
+  },
+  {
+    "kecamatan": "Regol",
+    "kelurahan": [
+      "Ancol-40254",
+      "Balonggede-40251",
+      "Ciateul-40252",
+      "Cigereleng-40253",
+      "Ciseureuh-40255",
+      "Pasirluyu-40254",
+      "Pungkur-40252"
+    ],
+    "tahun_2009": 58157,
+    "tahun_2010": 107418,
+    "tahun_2011": 0,
+    "tahun_2012": 102059,
+    "tahun_2013": 111211,
+    "tahun_2014": 103191,
+    "tahun_2015": 93927,
+    "luas_wilayah": "4,3",
+    "kepadatan": 23481,
+    "url": "regol"
+  },
+  {
+    "kecamatan": "Sukajadi",
+    "kelurahan": [
+      "Cipedes-40162",
+      "Pasteur-40161",
+      "Sukabungah-40162",
+      "Sukagalih-40163",
+      "Sukawarna-40164"
+    ],
+    "tahun_2009": 113483,
+    "tahun_2010": 99611,
+    "tahun_2011": 0,
+    "tahun_2012": 109514,
+    "tahun_2013": 107079,
+    "tahun_2014": 110332,
+    "tahun_2015": 91894,
+    "luas_wilayah": "4,3",
+    "kepadatan": 22973,
+    "url": "sukajadi"
+  },
+  {
+    "kecamatan": "Sukasari",
+    "kelurahan": [
+      "Gegerkalong-40153",
+      "Isola-40154",
+      "Sarijadi-40151",
+      "Sukarasa-40152"
+    ],
+    "tahun_2009": 78710,
+    "tahun_2010": 79113,
+    "tahun_2011": 0,
+    "tahun_2012": 83198,
+    "tahun_2013": 83426,
+    "tahun_2014": 84769,
+    "tahun_2015": 70137,
+    "luas_wilayah": "6,27",
+    "kepadatan": 11689,
+    "url": "sukasari"
+  },
+  {
+    "kecamatan": "Sumur Bandung",
+    "kelurahan": [
+      "Babakanciamis-40117",
+      "Braga-40111",
+      "Kebonpisang-40112",
+      "Merdeka-40113"
+    ],
+    "tahun_2009": 52784,
+    "tahun_2010": 42709,
+    "tahun_2011": 0,
+    "tahun_2012": 43045,
+    "tahun_2013": 44017,
+    "tahun_2014": 42907,
+    "tahun_2015": 41406,
+    "luas_wilayah": "3,4",
+    "kepadatan": 13802,
+    "url": "sumur-bandung"
+  },
+  {
+    "kecamatan": "Ujungberung",
+    "kelurahan": [
+      "Cigending-40611",
+      "Pasanggrahan-40617",
+      "Pasirendah-40619",
+      "Pasirjati-40616",
+      "Pasirwangi-40618",
+      "Ujungberung-40611"
+    ],
+    "tahun_2009": 64452,
+    "tahun_2010": 79324,
+    "tahun_2011": 0,
+    "tahun_2012": 85832,
+    "tahun_2013": 85945,
+    "tahun_2014": 89033,
+    "tahun_2015": 74801,
+    "luas_wilayah": "6,4",
+    "kepadatan": 12466,
+    "url": "ujungberung"
+  }
+]
