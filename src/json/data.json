@@ -17,6 +17,7 @@
     "tahun_2014": 123433,
     "tahun_2015": 104808,
     "luas_wilayah": "3,71",
+    "wilayah": "Bojonagara",
     "kepadatan": 34936,
     "url": "andir"
   },
@@ -36,6 +37,7 @@
     "tahun_2014": 81528,
     "tahun_2015": 68705,
     "luas_wilayah": "3,79",
+    "wilayah": "Ujungberung",
     "kepadatan": 22901,
     "url": "antapani"
   },
@@ -55,6 +57,7 @@
     "tahun_2014": 78982,
     "tahun_2015": 65494,
     "luas_wilayah": "5,87",
+    "wilayah": "Ujungberung",
     "kepadatan": 13098,
     "url": "arcamanik"
   },
@@ -76,6 +79,7 @@
     "tahun_2014": 85923,
     "tahun_2015": 68048,
     "luas_wilayah": "2,89",
+    "wilayah": "Tegallega",
     "kepadatan": 34024,
     "url": "astana-anyar"
   },
@@ -97,6 +101,7 @@
     "tahun_2014": 141766,
     "tahun_2015": 119887,
     "luas_wilayah": "7,45",
+    "wilayah": "Tegallega",
     "kepadatan": 17126,
     "url": "babakan-ciparay"
   },
@@ -116,6 +121,7 @@
     "tahun_2014": 63293,
     "tahun_2015": 51173,
     "luas_wilayah": "6,06",
+    "wilayah": "Gedebage",
     "kepadatan": 8528,
     "url": "bandung-kidul"
   },
@@ -139,6 +145,7 @@
     "tahun_2014": 147313,
     "tahun_2015": 120502,
     "luas_wilayah": "6,46",
+    "wilayah": "Tegallega",
     "kepadatan": 20083,
     "url": "bandung-kulon"
   },
@@ -157,6 +164,7 @@
     "tahun_2014": 40512,
     "tahun_2015": 38077,
     "luas_wilayah": "3,39",
+    "wilayah": "Cibeunying",
     "kepadatan": 12692,
     "url": "bandung-wetan"
   },
@@ -180,6 +188,7 @@
     "tahun_2014": 132593,
     "tahun_2015": 114487,
     "luas_wilayah": "5,03",
+    "wilayah": "Karees",
     "kepadatan": 22897,
     "url": "batununggal"
   },
@@ -200,6 +209,7 @@
     "tahun_2014": 130786,
     "tahun_2015": 110889,
     "luas_wilayah": "3,03",
+    "wilayah": "Tegallega",
     "kepadatan": 36963,
     "url": "bojongloa-kaler"
   },
@@ -221,6 +231,7 @@
     "tahun_2014": 91037,
     "tahun_2015": 78173,
     "luas_wilayah": "6,26",
+    "wilayah": "Tegallega",
     "kepadatan": 13028,
     "url": "bojongloa-kidul"
   },
@@ -240,6 +251,7 @@
     "tahun_2014": 107860,
     "tahun_2015": 100711,
     "luas_wilayah": "7,93",
+    "wilayah": "Gedebage",
     "kepadatan": 14387,
     "url": "buah-batu"
   },
@@ -259,6 +271,7 @@
     "tahun_2014": 77229,
     "tahun_2015": 67727,
     "luas_wilayah": "4,5",
+    "wilayah": "Cibeunying",
     "kepadatan": 16931,
     "url": "cibeunying-kaler"
   },
@@ -280,6 +293,7 @@
     "tahun_2014": 122062,
     "tahun_2015": 101647,
     "luas_wilayah": "5,25",
+    "wilayah": "Cibeunying",
     "kepadatan": 20329,
     "url": "cibeunying-kidul"
   },
@@ -299,6 +313,7 @@
     "tahun_2014": 86428,
     "tahun_2015": 81614,
     "luas_wilayah": "6,32",
+    "wilayah": "Ujungberung",
     "kepadatan": 13602,
     "url": "cibiru"
   },
@@ -320,6 +335,7 @@
     "tahun_2014": 111217,
     "tahun_2015": 93133,
     "luas_wilayah": "6,86",
+    "wilayah": "Bojonagara",
     "kepadatan": 15522,
     "url": "cicendo"
   },
@@ -338,6 +354,7 @@
     "tahun_2014": 57666,
     "tahun_2015": 47498,
     "luas_wilayah": "6,11",
+    "wilayah": "Cibeunying",
     "kepadatan": 7916,
     "url": "cidadap"
   },
@@ -357,6 +374,7 @@
     "tahun_2014": 27038,
     "tahun_2015": 22385,
     "luas_wilayah": "3,68",
+    "wilayah": "Ujungberung",
     "kepadatan": 7461,
     "url": "cinambo"
   },
@@ -378,6 +396,7 @@
     "tahun_2014": 135655,
     "tahun_2015": 128239,
     "luas_wilayah": "7,35",
+    "wilayah": "Cibeunying",
     "kepadatan": 18319,
     "url": "coblong"
   },
@@ -397,6 +416,7 @@
     "tahun_2014": 42919,
     "tahun_2015": 35425,
     "luas_wilayah": "9,58",
+    "wilayah": "Gedebage",
     "kepadatan": 3936,
     "url": "gedebage"
   },
@@ -418,6 +438,7 @@
     "tahun_2014": 139019,
     "tahun_2015": 123778,
     "luas_wilayah": "6,12",
+    "wilayah": "Karees",
     "kepadatan": 20629,
     "url": "kiaracondong"
   },
@@ -440,6 +461,7 @@
     "tahun_2014": 85425,
     "tahun_2015": 79206,
     "luas_wilayah": "5,9",
+    "wilayah": "Karees",
     "kepadatan": 15841,
     "url": "lengkong"
   },
@@ -459,6 +481,7 @@
     "tahun_2014": 74220,
     "tahun_2015": 67128,
     "luas_wilayah": "6,67",
+    "wilayah": "Ujungberung",
     "kepadatan": 11188,
     "url": "mandalajati"
   },
@@ -478,6 +501,7 @@
     "tahun_2014": 40955,
     "tahun_2015": 35778,
     "luas_wilayah": "5,1",
+    "wilayah": "Ujungberung",
     "kepadatan": 7155,
     "url": "panyileukan"
   },
@@ -497,6 +521,7 @@
     "tahun_2014": 93642,
     "tahun_2015": 81950,
     "luas_wilayah": "7,33",
+    "wilayah": "Gedebage",
     "kepadatan": 11707,
     "url": "rancasari"
   },
@@ -519,6 +544,7 @@
     "tahun_2014": 103191,
     "tahun_2015": 93927,
     "luas_wilayah": "4,3",
+    "wilayah": "Karees",
     "kepadatan": 23481,
     "url": "regol"
   },
@@ -539,6 +565,7 @@
     "tahun_2014": 110332,
     "tahun_2015": 91894,
     "luas_wilayah": "4,3",
+    "wilayah": "Bojonagara",
     "kepadatan": 22973,
     "url": "sukajadi"
   },
@@ -558,6 +585,7 @@
     "tahun_2014": 84769,
     "tahun_2015": 70137,
     "luas_wilayah": "6,27",
+    "wilayah": "Bojonagara",
     "kepadatan": 11689,
     "url": "sukasari"
   },
@@ -577,6 +605,7 @@
     "tahun_2014": 42907,
     "tahun_2015": 41406,
     "luas_wilayah": "3,4",
+    "wilayah": "Cibeunying",
     "kepadatan": 13802,
     "url": "sumur-bandung"
   },
@@ -598,6 +627,7 @@
     "tahun_2014": 89033,
     "tahun_2015": 74801,
     "luas_wilayah": "6,4",
+    "wilayah": "Ujungberung",
     "kepadatan": 12466,
     "url": "ujungberung"
   }
