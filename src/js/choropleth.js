@@ -17,15 +17,15 @@ info.onAdd = function (map) {
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
 	this._div.innerHTML = '<h4>Tingkat Kepadatan Populasi Kota Bandung Tahun 2015</h4>' +  (props ?
-		'<b>' + props._kecamatan + '</b><br />' + props._kepadatan + ' jiwa / km<sup>2</sup>' : 'Pilih Kecamatan');
+		'<b>' + props._kecamatan + '</b><br />' + props._kepadatan_2009 + ' jiwa / km<sup>2</sup>' : 'Pilih Kecamatan');
 };
 
-statBox.onAdd = function (map) {
+/*statBox.onAdd = function (map) {
 	this._div = L.DomUtil.create('div', 'statistik');
 	return this._div;
 }
 
-statBox.addTo(map);
+statBox.addTo(map);*/
 info.addTo(map);
 
 function getColor(d) {
@@ -33,7 +33,7 @@ function getColor(d) {
 		   d > 30000 ? '#CC4C02' :
 		   d > 25000 ? '#EC7014' :
 		   d > 20000 ? '#FE9929' :
-		   d > 15000 ? '#FEC44f' :
+		   d > 15000 ? '#FEC44F' :
 		   d > 10000 ? '#FEE391' :
 		   d > 5000  ? '#FFF7BC' :
 					   '#FFFFE5';
@@ -41,7 +41,7 @@ function getColor(d) {
 
 function style(feature) {
 	return {
-		fillColor: getColor(feature.properties._kepadatan),
+		fillColor: getColor(feature.properties._kepadatan_2009),
 		weight: 1,
 		opacity: 1,
 		color: 'white',
@@ -86,11 +86,26 @@ function zoomToFeature(e) {
 	map.fitBounds(e.target.getBounds());
 }
 
+function openModal(e) {
+	var kecamatan = e.target.feature.properties._url;
+
+	$.getJSON('src/json/data.json', function (result) {
+		for (var i = 0 ; i < result.length; i++) {
+			if (result[i].url == kecamatan) {
+				dataStatistik(result[i]);
+			};
+		}
+	});
+	$('#statsModal').modal('show'); 
+	e.target.getBounds();
+}
+
 function dataStatistik(data) {
 	$(function () {
-		$('.statistik').highcharts({
+		$('#statistik').highcharts({
 			chart: {
 				type: 'line',
+				width: 890,
 				style: { fontFamily: 'PT Sans'}
 			},
 			title: {
@@ -108,7 +123,10 @@ function dataStatistik(data) {
 				}
 			},
 			xAxis: {
-				categories: ['2009', '2010', '2011', '2012', '2013', '2014', '2015']
+				categories: ['2009', '2010', '2011', '2012', '2013', '2014', '2015'],
+				title: {
+					text: 'Tahun'
+				}
 			},
 			yAxis: {
 				min: 0,
@@ -133,7 +151,7 @@ geojson = L.geoJson(baseMap, {
 		layer.on({
 			mouseover: highlightFeature,
 			mouseout: resetHighlight,
-			click: zoomToFeature
+			click: openModal
 		});
 	}
 }).addTo(map);

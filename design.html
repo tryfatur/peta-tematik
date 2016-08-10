@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8 />
+		<title>Bandung Choropleth Map</title>
+		<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+		<link rel="stylesheet" href='src/bootstrap.css' />
+		<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+		<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+		<link href="src/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+				  		</button>
+				  		<a class="navbar-brand" href="#">Bandung Choropleth Map</a>
+				  	</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="main-navbar">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#">Beranda</a></li>
+							<li class="dropdown">
+					  			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					  				Tahun <span class="caret"></span>
+					  			</a>
+					  			<ul class="dropdown-menu">
+									<li><a href="#" id="data2009" value="ahay">Tahun 2009</a></li>
+									<li><a href="#" id="data2010">Tahun 2010</a></li>
+									<li><a href="#" id="data2012">Tahun 2012</a></li>
+									<li><a href="#" id="data2013">Tahun 2013</a></li>
+									<li><a href="#" id="data2014">Tahun 2014</a></li>
+									<li><a href="#" id="data2015">Tahun 2015</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</div><!-- /.container-fluid -->
+			</div>
+		</nav>
+
+		<div id="map"></div>
+
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+		<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+		<script src="http://code.highcharts.com/highcharts.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="src/js/basemap.js"></script>
+		<script src="src/js/choropleth.js"></script>
+		<script src="src/js/data.js"></script>
+
+		<script>
+			/*$.each(database, function (i) {
+				data_kepadatan.push(database[i].kepadatan_2009);
+			});*/
+
+			$('#data2009').on('click', function () {
+				console.log(this.val);
+			});
+		</script>
+	</body>
+</html>

@@ -5,7 +5,12 @@ var baseMap = {
       "type": "Feature",
       "properties": {
         "_kecamatan": "Cicendo",
-        "_kepadatan": 15522,
+        "_kepadatan_2009": 11788,
+        "_kepadatan_2010": 17663,
+        "_kepadatan_2012": 18139,
+        "_kepadatan_2013": 18626,
+        "_kepadatan_2014": 18536,
+        "_kepadatan_2015": 15522,
         "_url": "cicendo"
       },
       "geometry": {
@@ -688,7 +693,12 @@ var baseMap = {
       "type": "Feature",
       "properties": {
         "_kecamatan": "Sukajadi",
-        "_kepadatan": 22973,
+        "_kepadatan_2009": 28370,
+        "_kepadatan_2010": 24902,
+        "_kepadatan_2012": 27378,
+        "_kepadatan_2013": 26769,
+        "_kepadatan_2014": 27583,
+        "_kepadatan_2015": 22973,
         "_url": "sukajadi"
       },
       "geometry": {
@@ -1071,7 +1081,12 @@ var baseMap = {
       "type": "Feature",
       "properties": {
         "_kecamatan": "Coblong",
-        "_kepadatan": 18319,
+        "_kepadatan_2009": 18634,
+        "_kepadatan_2010": 17701,
+        "_kepadatan_2012": 18610,
+        "_kepadatan_2013": 19029,
+        "_kepadatan_2014": 19379,
+        "_kepadatan_2015": 18319,
         "_url": "coblong"
       },
       "geometry": {
@@ -2434,7 +2449,12 @@ var baseMap = {
       "type": "Feature",
       "properties": {
         "_kecamatan": "Bandung Wetan",
-        "_kepadatan": 12692,
+        "_kepadatan_2009": 15496,
+        "_kepadatan_2010": 11836,
+        "_kepadatan_2012": 13112,
+        "_kepadatan_2013": 12902,
+        "_kepadatan_2014": 13504,
+        "_kepadatan_2015": 12692,
         "_url": "bandung-wetan"
       },
       "geometry": {
@@ -2893,7 +2913,12 @@ var baseMap = {
       "type": "Feature",
       "properties": {
         "_kecamatan": "Cibeunying Kaler",
-        "_kepadatan": 16931,
+        "_kepadatan_2009": 20355,
+        "_kepadatan_2010": 18036,
+        "_kepadatan_2012": 18812,
+        "_kepadatan_2013": 18899,
+        "_kepadatan_2014": 19307,
+        "_kepadatan_2015": 16931,
         "_url": "cibeunying-kaler"
       },
       "geometry": {
@@ -3852,7 +3877,12 @@ var baseMap = {
       "type": "Feature",
       "properties": {
         "_kecamatan": "Sumur Bandung",
-        "_kepadatan": 13802,
+        "_kepadatan_2009": 17594,
+        "_kepadatan_2010": 14236,
+        "_kepadatan_2012": 14348,
+        "_kepadatan_2013": 14672,
+        "_kepadatan_2014": 14302,
+        "_kepadatan_2015": 13802,
         "_url": "sumur-bandung"
       },
       "geometry": {
@@ -4123,7 +4153,12 @@ var baseMap = {
       "type": "Feature",
       "properties": {
         "_kecamatan": "Andir",
-        "_kepadatan": 34936,
+        "_kepadatan_2009": 41725,
+        "_kepadatan_2010": 36554,
+        "_kepadatan_2012": 40114,
+        "_kepadatan_2013": 39891,
+        "_kepadatan_2014": 41144,
+        "_kepadatan_2015": 34936,
         "_url": "andir"
       },
       "geometry": {
@@ -4602,7 +4637,12 @@ var baseMap = {
       "type": "Feature",
       "properties": {
         "_kecamatan": "Batununggal",
-        "_kepadatan": 22897,
+        "_kepadatan_2009": 15453,
+        "_kepadatan_2010": 25098,
+        "_kepadatan_2012": 25384,
+        "_kepadatan_2013": 26180,
+        "_kepadatan_2014": 26518,
+        "_kepadatan_2015": 22897,
         "_url": "batununggal"
       },
       "geometry": {
@@ -4953,7 +4993,12 @@ var baseMap = {
       "type": "Feature",
       "properties": {
         "_kecamatan": "Lengkong",
-        "_kepadatan": 15841,
+        "_kepadatan_2009": 18070,
+        "_kepadatan_2010": 17527,
+        "_kepadatan_2012": 17191,
+        "_kepadatan_2013": 18411,
+        "_kepadatan_2014": 17085,
+        "_kepadatan_2015": 15841,
         "_url": "lengkong"
       },
       "geometry": {
@@ -5456,7 +5501,12 @@ var baseMap = {
       "type": "Feature",
       "properties": {
         "_kecamatan": "Regol",
-        "_kepadatan": 23481,
+        "_kepadatan_2009": 14539,
+        "_kepadatan_2010": 26854,
+        "_kepadatan_2012": 25514,
+        "_kepadatan_2013": 27802,
+        "_kepadatan_2014": 25797,
+        "_kepadatan_2015": 23481,
         "_url": "regol"
       },
       "geometry": {
@@ -6011,7 +6061,12 @@ var baseMap = {
       "type": "Feature",
       "properties": {
         "_kecamatan": "Astana Anyar",
-        "_kepadatan": 34024,
+        "_kepadatan_2009": 41023,
+        "_kepadatan_2010": 39777,
+        "_kepadatan_2012": 41850,
+        "_kepadatan_2013": 41442,
+        "_kepadatan_2014": 42961,
+        "_kepadatan_2015": 34024,
         "_url": "astana-anyar"
       },
       "geometry": {
