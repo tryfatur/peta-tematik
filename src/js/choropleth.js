@@ -1,5 +1,5 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoidHJ5ZmF0dXIiLCJhIjoiY2lxdDJ5d3R1MDAydmZybmh3a3VtcmFvMiJ9.lL9RoXOtTscOHiSvOCrL-Q';
-var map              = L.mapbox.map('map').setView([-6.896462, 107.609290], 13);
+var map              = L.mapbox.map('map').setView([-6.896462, 107.609290], 12);
 var info             = L.control();
 var statBox          = L.control({'position':'bottomleft'});
 var geojson;
@@ -46,7 +46,7 @@ function style(feature) {
 		opacity: 1,
 		color: 'white',
 		dashArray: '3',
-		fillOpacity: 0.7
+		fillOpacity: 0.9
 	};
 }
 
@@ -57,7 +57,7 @@ function highlightFeature(e) {
 		weight: 5,
 		color: '#666',
 		dashArray: '',
-		fillOpacity: 0.7
+		fillOpacity: 0.9
 	});
 
 	if (!L.Browser.ie && !L.Browser.opera) {
@@ -76,7 +76,8 @@ function zoomToFeature(e) {
 	var kecamatan = e.target.feature.properties._url;
 
 	$.getJSON('src/json/data.json', function (result) {
-		for (var i = 0 ; i < result.length; i++) {
+		var resultLength = result.length;
+		for (var i = 0 ; i < resultLength; i++) {
 			if (result[i].url == kecamatan) {
 				dataStatistik(result[i]);
 			};
@@ -90,7 +91,8 @@ function openModal(e) {
 	var kecamatan = e.target.feature.properties._url;
 
 	$.getJSON('src/json/data.json', function (result) {
-		for (var i = 0 ; i < result.length; i++) {
+		var resultLength = result.length;
+		for (var i = 0 ; i < resultLength; i++) {
 			if (result[i].url == kecamatan) {
 				dataStatistik(result[i]);
 			};
