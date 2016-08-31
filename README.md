@@ -7,4 +7,4 @@ Platform ini dibangun menggunakan basis peta [Mapbox] (https://mapbox.com) diduk
 Dokumen perbatasan kecamatan dalam format GeoJSON tersedia pada [tautan] (https://gist.github.com/tryfatur/bf18d122d2e9db7dbcac7a45953f49ab) ini.
 
 # Preview
-![Preview](https://github.com/tryfatur/bdg-choropleth-map/raw/master/preview.png)
+![Preview](https://tryfatur.github.io/bdg-choropleth-map/)

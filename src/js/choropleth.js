@@ -4,9 +4,9 @@ var info             = L.control();
 var statBox          = L.control({'position':'bottomleft'});
 var geojson;
 
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' + L.mapbox.accessToken, {
-	id: 'mapbox.light'
-}).addTo(map);
+L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken).addTo(map);
+
+
 
 info.onAdd = function (map) {
 	this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
@@ -29,14 +29,14 @@ statBox.addTo(map);*/
 info.addTo(map);
 
 function getColor(d) {
-	return d > 35000 ? '#8C2D04' :
-		   d > 30000 ? '#CC4C02' :
-		   d > 25000 ? '#EC7014' :
-		   d > 20000 ? '#FE9929' :
-		   d > 15000 ? '#FEC44F' :
-		   d > 10000 ? '#FEE391' :
-		   d > 5000  ? '#FFF7BC' :
-					   '#FFFFE5';
+	return d > 35000 ? '#b10026' :
+		   d > 30000 ? '#e31a1c' :
+		   d > 25000 ? '#fc4e2a' :
+		   d > 20000 ? '#fd8d3c' :
+		   d > 15000 ? '#feb24c' :
+		   d > 10000 ? '#fed976' :
+		   d > 5000  ? '#ffeda0' :
+					   '#ffffcc';
 }
 
 function style(feature) {
