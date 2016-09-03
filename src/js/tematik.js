@@ -7,13 +7,19 @@ var geojson;
 
 var globalStyle = { weight: 1, opacity: 1, color: 'white', dashArray: '3', fillOpacity: 0.9 };
 
-var data = [
-	{ "text": "Jumlah Kepadatan Penduduk Tahun 2015", "value": "2015" },
-	{ "text": "Jumlah Kepadatan Penduduk Tahun 2014", "value": "2014" },
-	{ "text": "Jumlah Kepadatan Penduduk Tahun 2013", "value": "2013" },
-	{ "text": "Jumlah Kepadatan Penduduk Tahun 2012", "value": "2012" },
-	{ "text": "Jumlah Kepadatan Penduduk Tahun 2010", "value": "2010" },
-	{ "text": "Jumlah Kepadatan Penduduk Tahun 2009", "value": "2009" }
+var kategori = [
+	{ "text": "Kepadatan Penduduk", "value": "density" },
+	{ "text": "Kepadatan Penduduk Pria", "value": "densityMale" },
+	{ "text": "Kepadatan Penduduk Wanita", "value": "densityFemale" },
+];
+
+var tahun = [
+	{ "text": "2015", "value": "2015" },
+	{ "text": "2014", "value": "2014" },
+	{ "text": "2013", "value": "2013" },
+	{ "text": "2012", "value": "2012" },
+	{ "text": "2010", "value": "2010" },
+	{ "text": "2009", "value": "2009" },
 ];
 
 L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken).addTo(map);
@@ -34,29 +40,45 @@ info.addTo(map);
 
 datasource.onAdd = function (map) {
 	this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-	this._div.innerHTML = '<b>Sumber Data: </b><select id="dataSource"></select>';
+	this._div.innerHTML = '<b>Kategori: </b><select id="kategori"></select> <b>Tahun: </b><select id="tahun"></select>';
 
 	return this._div;
 };
 
 datasource.addTo(map);
 
-legend.onAdd = function (map) {
-	var div = L.DomUtil.create('div', 'info legend'),
-		grades = [0, 5000, 10000, 15000, 20000, 25000, 30000, 35000],
-		labels = [];
-
-	// loop through our density intervals and generate a label with a colored square for each interval
-	for (var i = 0; i < grades.length; i++) {
-		div.innerHTML +=
-			'<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-			grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
-	}
-
-	return div;
+var grades = {
+	"general": [0, 5000, 10000, 15000, 20000, 25000, 30000, 35000],
+	"gender" : [0, 3000, 6000, 9000, 12000, 15000, 18000, 21000]
 };
 
-legend.addTo(map);
+legend.onAdd = function (map) {
+	var divLegend = L.DomUtil.create('div', 'info legend');
+
+	// loop through our density intervals and generate a label with a colored square for each interval
+	$('#kategori').change(function () {
+		if (this.value == 'densityMale') {
+			for (var i = 0; i < grades.gender.length; i++) {
+				divLegend.innerHTML +=
+					'<i style="background:' + getColorBlue(grades.gender[i] + 1) + '"></i> ' +
+					grades.gender[i] + (grades.gender[i + 1] ? '&ndash;' + grades.gender[i + 1] + '<br>' : '+');
+			}
+		}else if (this.value == 'densityFemale') {
+			for (var i = 0; i < grades.gender.length; i++) {
+				divLegend.innerHTML +=
+					'<i style="background:' + getColorPink(grades.gender[i] + 1) + '"></i> ' +
+					grades.gender[i] + (grades.gender[i + 1] ? '&ndash;' + grades.gender[i + 1] + '<br>' : '+');
+			}
+		}else{
+			for (var i = 0; i < grades.general.length; i++) {
+				divLegend.innerHTML +=
+					'<i style="background:' + getColor(grades.general[i] + 1) + '"></i> ' +
+					grades.general[i] + (grades.general[i + 1] ? '&ndash;' + grades.general[i + 1] + '<br>' : '+');
+			}
+		}
+	});
+	return divLegend;
+};
 
 function getColor(d) {
 	return d > 35000 ? '#b10026' :
@@ -69,8 +91,30 @@ function getColor(d) {
 					   '#ffffcc';
 }
 
+function getColorPink(d) {
+	return d > 21000 ? '#99000d' :
+		   d > 18000 ? '#cb181d' :
+		   d > 15000 ? '#ef3b2c' :
+		   d > 12000 ? '#fb6a4a' :
+		   d > 9000  ? '#fc9272' :
+		   d > 6000  ? '#fcbba1' :
+		   d > 3000  ? '#fee0d2' :
+					   '#fff5f0';
+}
+
+function getColorBlue(d) {
+	return d > 21000 ? '#084594' :
+		   d > 18000 ? '#2171b5' :
+		   d > 15000 ? '#4292c6' :
+		   d > 12000 ? '#6baed6' :
+		   d > 9000  ? '#9ecae1' :
+		   d > 6000  ? '#c6dbef' :
+		   d > 3000  ? '#deebf7' :
+					   '#f7fbff';
+}
+
 function style(feature) {
-	globalStyle.fillColor = getColor(feature.properties._kepadatan_2015);
+	globalStyle.fillColor = getColor(feature.properties._kepadatan._2015);
 	
 	return globalStyle;
 }
@@ -130,7 +174,7 @@ function dataStatistik(data) {
 				style: { fontFamily: 'PT Sans'}
 			},
 			title: {
-				text: 'Jumlah Penduduk di Kecamatan ' + data.kecamatan + ' Tahun 2009 - 2015'
+				text: 'Data Kependudukan di Kecamatan ' + data.kecamatan + ' Tahun 2009 - 2015'
 			},
 			subtitle: {
 				text: 'Sumber: Portal Data Bandung'
@@ -156,14 +200,76 @@ function dataStatistik(data) {
 				}
 			},
 			series: [{
-				name: 'Jumlah Penduduk',
-				data: [data.tahun_2009, data.tahun_2010, data.tahun_2011, data.tahun_2012, data.tahun_2013, data.tahun_2014, data.tahun_2015],
-				color: '#b10026'
+				name: 'Jumlah Populasi',
+				data: [
+					data.populasi.p_2009, 
+					data.populasi.p_2010, 
+					data.populasi.p_2011, 
+					data.populasi.p_2012, 
+					data.populasi.p_2013, 
+					data.populasi.p_2014, 
+					data.populasi.p_2015
+				]
 			},
 			{
 				name: 'Jumlah Kepadatan Penduduk (km2)',
-				data: [data.kepadatan_2009, data.kepadatan_2010, data.kepadatan_2011, data.kepadatan_2012, data.kepadatan_2013, data.kepadatan_2014, data.kepadatan_2015],
-				color: '#fc4e2a'
+				data: [
+					data.kepadatan.k_2009, 
+					data.kepadatan.k_2010, 
+					data.kepadatan.k_2011, 
+					data.kepadatan.k_2012, 
+					data.kepadatan.k_2013, 
+					data.kepadatan.k_2014, 
+					data.kepadatan.k_2015
+				]
+			},
+			{
+				name: 'Jumlah Populasi Pria',
+				data: [
+					data.populasi_pria.pp_2009, 
+					data.populasi_pria.pp_2010, 
+					data.populasi_pria.pp_2011, 
+					data.populasi_pria.pp_2012, 
+					data.populasi_pria.pp_2013, 
+					data.populasi_pria.pp_2014, 
+					data.populasi_pria.pp_2015
+				]
+			},
+			{
+				name: 'Jumlah Kepadatan Penduduk Pria (km2)',
+				data: [
+					data.kepadatan_pria.kp_2009, 
+					data.kepadatan_pria.kp_2010, 
+					data.kepadatan_pria.kp_2011, 
+					data.kepadatan_pria.kp_2012, 
+					data.kepadatan_pria.kp_2013, 
+					data.kepadatan_pria.kp_2014, 
+					data.kepadatan_pria.kp_2015
+				]
+			},
+			{
+				name: 'Jumlah Populasi Wanita',
+				data: [
+					data.populasi_wanita.pw_2009, 
+					data.populasi_wanita.pw_2010, 
+					data.populasi_wanita.pw_2011, 
+					data.populasi_wanita.pw_2012, 
+					data.populasi_wanita.pw_2013, 
+					data.populasi_wanita.pw_2014, 
+					data.populasi_wanita.pw_2015
+				]
+			},
+			{
+				name: 'Jumlah Kepadatan Penduduk Wanita (km2)',
+				data: [
+					data.kepadatan_wanita.kw_2009, 
+					data.kepadatan_wanita.kw_2010, 
+					data.kepadatan_wanita.kw_2011, 
+					data.kepadatan_wanita.kw_2012, 
+					data.kepadatan_wanita.kw_2013, 
+					data.kepadatan_wanita.kw_2014, 
+					data.kepadatan_wanita.kw_2015
+				]
 			}]
 		});
 	});
@@ -182,46 +288,127 @@ geojson = L.geoJson(baseMap, { style: style, onEachFeature: onEachFeature });
 geojson.addTo(map);
 
 // Send data options
-$.each(data, function (i) {
-	$('#dataSource').append(
-		'<option value="'+ data[i].value +'">'+ data[i].text +'</option>'
+$('#kategori').append('<option value="">-- Pilih Kategori --</option>');
+$.each(kategori, function (i) {
+	$('#kategori').append(
+		'<option value="'+ kategori[i].value +'">'+ kategori[i].text +'</option>'
 	);
 });
 
 // Restyle depends on data
-$("#dataSource").change(function () {
+var dataKategori;
+$('#tahun').append('<option value="">-- Pilih Kategori --</option>');
+$('#kategori').change(function () {
+	dataKategori = this.value;
+
+	$('#tahun').empty();
+	$('#tahun').append('<option value="">-- Pilih Tahun --</option>');
+	$.each(tahun, function (i) {
+		$('#tahun').append(
+			'<option value="'+ tahun[i].value +'">'+ tahun[i].text +'</option>'
+		);
+	});
+});
+
+$("#tahun").change(function () {
 	switch(this.value){
-		case "2015": geojson.setStyle(function style(feature) {
-			return { fillColor: getColor(feature.properties._kepadatan_2015) }
-		});
+		case "2015": 
+			if (dataKategori == 'densityMale') {
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColorBlue(f.properties._kepadatan_pria.kp_2015) }
+				});
+			}else if (dataKategori == 'densityFemale') {
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColorPink(f.properties._kepadatan_wanita.kw_2015) }
+				});
+			}else{
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColor(f.properties._kepadatan._2015) }
+				});
+			}
 		break;
 
-		case "2014" : geojson.setStyle(function style(feature) {
-			return { fillColor: getColor(feature.properties._kepadatan_2014) }
-		});
+		case "2014": 
+			if (dataKategori == 'densityMale') {
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColorBlue(f.properties._kepadatan_pria.kp_2014) }
+				});
+			}else if (dataKategori == 'densityFemale') {
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColorPink(f.properties._kepadatan_wanita.kw_2014) }
+				});
+			}else{
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColor(f.properties._kepadatan._2014) }
+				});
+			}
 		break;
 
-		case "2013" : geojson.setStyle(function style(feature) {
-			return { fillColor: getColor(feature.properties._kepadatan_2013) }
-		});
+		case "2013": 
+			if (dataKategori == 'densityMale') {
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColorBlue(f.properties._kepadatan_pria.kp_2013) }
+				});
+			}else if (dataKategori == 'densityFemale') {
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColorPink(f.properties._kepadatan_wanita.kw_2013) }
+				});
+			}else{
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColor(f.properties._kepadatan._2013) }
+				});
+			}
 		break;
 
-		case "2012" : geojson.setStyle(function style(feature) {
-			return { fillColor: getColor(feature.properties._kepadatan_2012) }
-		});
+		case "2012": 
+			if (dataKategori == 'densityMale') {
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColorBlue(f.properties._kepadatan_pria.kp_2012) }
+				});
+			}else if (dataKategori == 'densityFemale') {
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColorPink(f.properties._kepadatan_wanita.kw_2012) }
+				});
+			}else{
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColor(f.properties._kepadatan._2012) }
+				});
+			}
 		break;
 
-		case "2010" : geojson.setStyle(function style(feature) {
-			return { fillColor: getColor(feature.properties._kepadatan_2010) }
-		});
+		case "2010": 
+			if (dataKategori == 'densityMale') {
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColorBlue(f.properties._kepadatan_pria.kp_2010) }
+				});
+			}else if (dataKategori == 'densityFemale') {
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColorPink(f.properties._kepadatan_wanita.kw_2010) }
+				});
+			}else{
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColor(f.properties._kepadatan._2010) }
+				});
+			}
 		break;
 
-		case "2009" : geojson.setStyle(function style(feature) {
-			return { fillColor: getColor(feature.properties._kepadatan_2009) }
-		});
+		case "2009": 
+			if (dataKategori == 'densityMale') {
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColorBlue(f.properties._kepadatan_pria.kp_2009) }
+				});
+			}else if (dataKategori == 'densityFemale') {
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColorPink(f.properties._kepadatan_wanita.kw_2009) }
+				});
+			}else{
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColor(f.properties._kepadatan._2009) }
+				});
+			}
 		break;
 	};
 });
 
-map.attributionControl.addAttribution('Data Populasi &copy; <a href="http://data.bandung.go.id/">Portal Data Bandung</a>');
+map.attributionControl.addAttribution('Data Kependudukan &copy; <a href="http://data.bandung.go.id/">Portal Data Bandung</a>');
 map.attributionControl.addAttribution('<a href="https://github.com/tryfatur" target="_blank">Try Fathur Rachman</a> &copy 2016;');
