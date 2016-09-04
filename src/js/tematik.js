@@ -22,7 +22,7 @@ var tahun = [
 	{ "text": "2009", "value": "2009" },
 ];
 
-L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken).addTo(map);
+L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v9/tiles/256/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken).addTo(map);
 
 info.onAdd = function (map) {
 	this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
@@ -155,16 +155,28 @@ function openModal(e) {
 
 	$.getJSON('src/json/data.json', function (result) {
 		var resultLength = result.length;
+		var kelurahan = '';
 		for (var i = 0 ; i < resultLength; i++) {
 			if (result[i].url == kecamatan) {
 				dataStatistik(result[i]);
+
+				$('#luasWilayah').text(': ' + result[i].luas_wilayah + ' Km2');
+				$('#kawasan').text(': ' + result[i].kawasan);
+				
+				var kelurahanLength = result[i].kelurahan.length;
+				for(var j = 0; j < kelurahanLength; j++){
+					kelurahan += result[i].kelurahan[j] + ', ';
+				}
+				$('#kelurahan').text(': ' + kelurahan);
 			};
 		}
 	});
+
 	$('#statsModal').modal('show'); 
 	e.target.getBounds();
 }
 
+//Highchart Statistics
 function dataStatistik(data) {
 	$(function () {
 		$('#statistik').highcharts({
@@ -233,7 +245,8 @@ function dataStatistik(data) {
 					data.populasi_pria.pp_2013, 
 					data.populasi_pria.pp_2014, 
 					data.populasi_pria.pp_2015
-				]
+				],
+				visible: false
 			},
 			{
 				name: 'Jumlah Kepadatan Penduduk Pria (km2)',
@@ -245,7 +258,8 @@ function dataStatistik(data) {
 					data.kepadatan_pria.kp_2013, 
 					data.kepadatan_pria.kp_2014, 
 					data.kepadatan_pria.kp_2015
-				]
+				],
+				visible: false
 			},
 			{
 				name: 'Jumlah Populasi Wanita',
@@ -257,7 +271,8 @@ function dataStatistik(data) {
 					data.populasi_wanita.pw_2013, 
 					data.populasi_wanita.pw_2014, 
 					data.populasi_wanita.pw_2015
-				]
+				],
+				visible: false
 			},
 			{
 				name: 'Jumlah Kepadatan Penduduk Wanita (km2)',
@@ -269,7 +284,8 @@ function dataStatistik(data) {
 					data.kepadatan_wanita.kw_2013, 
 					data.kepadatan_wanita.kw_2014, 
 					data.kepadatan_wanita.kw_2015
-				]
+				],
+				visible: false
 			}]
 		});
 	});
@@ -411,4 +427,4 @@ $("#tahun").change(function () {
 });
 
 map.attributionControl.addAttribution('Data Kependudukan &copy; <a href="http://data.bandung.go.id/">Portal Data Bandung</a>');
-map.attributionControl.addAttribution('<a href="https://github.com/tryfatur" target="_blank">Try Fathur Rachman</a> &copy 2016;');
+map.attributionControl.addAttribution('<a href="https://github.com/tryfatur" target="_blank">Try Fathur Rachman</a> &copy 2016.');
