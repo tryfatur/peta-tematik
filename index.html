@@ -10,9 +10,9 @@
 		<link rel="shortcut icon" href="src/worldwide.png" type="image/png">
 		<link rel="icon" href="src/worldwide.png" type="image/png">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
-		<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
-		<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-		<link href="src/style.css" rel="stylesheet">
+		<link rel='stylesheet' href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' />
+		<link rel='stylesheet' href="https://fonts.googleapis.com/css?family=PT+Sans">
+		<link rel='stylesheet' href="src/style.css">
 	</head>
 	<body>
 		
@@ -31,20 +31,58 @@
 						<div id="statistik"></div>
 					</div>
 					<div class="modal-body">
-						<table class="table">
-							<tr>
-								<td>Luas Wilayah</td>
-								<td id="luasWilayah"></td>
-							</tr>
-							<tr>
-								<td>Kawasan</td>
-								<td id="kawasan"></td>
-							</tr>
-							<tr>
-								<td>Kelurahan</td>
-								<td id="kelurahan"></td>
-							</tr>
-						</table>
+						<div class="row">
+							<div class="col-md-6">
+								<h3>Demografi Kependudukan</h3>
+								<table class="table">
+									<tr>
+										<td>Jumlah Penduduk (2015)</td>
+										<td id="populasi">:</td>
+									</tr>
+									<tr>
+										<td>Luas Wilayah</td>
+										<td id="luasWilayah"></td>
+									</tr>
+									<tr>
+										<td>Kawasan</td>
+										<td id="kawasan"></td>
+									</tr>
+									<tr>
+										<td>Kelurahan</td>
+										<td id="kelurahan"></td>
+									</tr>
+								</table>
+							</div>
+							<div class="col-md-6">
+								<h3>Demografi Pendidikan</h3>
+								<table class="table">
+									<tr>
+										<td>Jumlah SD/Sederajat</td>
+										<td id="jumlahSD">:</td>
+									</tr>
+									<tr>
+										<td>Jumlah SMP/Sederajat</td>
+										<td id="jumlahSMP">:</td>
+									</tr>
+									<tr>
+										<td>Jumlah SMA/Sederajat</td>
+										<td id="jumlahSMA">:</td>
+									</tr>
+									<tr>
+										<td>Jumlah Usia Sekolah SD (7-12)</td>
+										<td id="usiaSD">:</td>
+									</tr>
+									<tr>
+										<td>Jumlah Usia Sekolah SMP (13-15)</td>
+										<td id="usiaSMP">:</td>
+									</tr>
+									<tr>
+										<td>Jumlah Usia Sekolah SMA (16-18)</td>
+										<td id="usiaSMA">:</td>
+									</tr>
+								</table>
+							</div>
+						</div>
 					</div>
 					<!-- <div class="modal-footer"></div> -->
 				</div>

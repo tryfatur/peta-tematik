@@ -162,6 +162,13 @@ function openModal(e) {
 
 				$('#luasWilayah').text(': ' + result[i].luas_wilayah + ' Km2');
 				$('#kawasan').text(': ' + result[i].kawasan);
+				$('#populasi').text(': ' + result[i].populasi.p_2015);
+				$('#jumlahSD').text(': ' + result[i].jumlah_sd);
+				$('#jumlahSMP').text(': ' + result[i].jumlah_smp);
+				$('#jumlahSMA').text(': ' + result[i].jumlah_sma);
+				$('#usiaSD').text(': ' + result[i].umur_7_12);
+				$('#usiaSMP').text(': ' + result[i].umur_13_15);
+				$('#usiaSMA').text(': ' + result[i].umur_16_18);
 				
 				var kelurahanLength = result[i].kelurahan.length;
 				for(var j = 0; j < kelurahanLength; j++){
