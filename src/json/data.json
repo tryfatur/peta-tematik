@@ -70,8 +70,10 @@
 		"umur_13_15": 6020,
 		"umur_16_18": 3830,
 		"jumlah_sd": 36,
-		"jumlah_smp": 18,
-		"jumlah_sma": 21
+        "jumlah_smp": 18,
+        "jumlah_sma": 15,
+        "jumlah_smk": 4,
+        "jumlah_keaksaraan": 1
     },
     {
         "kecamatan": "Antapani",
@@ -142,8 +144,10 @@
 		"umur_13_15": 3790,
 		"umur_16_18": 2495,
 		"jumlah_sd": 22,
-		"jumlah_smp": 6,
-		"jumlah_sma": 4
+        "jumlah_smp": 5,
+        "jumlah_sma": 2,
+        "jumlah_smk": 1,
+        "jumlah_keaksaraan": 1
     },
     {
         "kecamatan": "Arcamanik",
@@ -214,8 +218,10 @@
 		"umur_13_15": 4097,
 		"umur_16_18": 2567,
 		"jumlah_sd": 24,
-		"jumlah_smp": 8,
-		"jumlah_sma": 5
+        "jumlah_smp": 8,
+        "jumlah_sma": 3,
+        "jumlah_smk": 2,
+        "jumlah_keaksaraan": 0
     },
     {
         "kecamatan": "Astanaanyar",
@@ -288,8 +294,10 @@
 		"umur_13_15": 4202,
 		"umur_16_18": 2258,
 		"jumlah_sd": 36,
-		"jumlah_smp": 6,
-		"jumlah_sma": 9
+        "jumlah_smp": 6,
+        "jumlah_sma": 2,
+        "jumlah_smk": 5,
+        "jumlah_keaksaraan": 1
     },
     {
         "kecamatan": "Babakan Ciparay",
@@ -362,8 +370,10 @@
 		"umur_13_15": 7969,
 		"umur_16_18": 4469,
 		"jumlah_sd": 43,
-		"jumlah_smp": 5,
-		"jumlah_sma": 4
+        "jumlah_smp": 5,
+        "jumlah_sma": 1,
+        "jumlah_smk": 0,
+        "jumlah_keaksaraan": 3
     },
     {
         "kecamatan": "Bandung Kidul",
@@ -434,8 +444,10 @@
 		"umur_13_15": 3403,
 		"umur_16_18": 1815,
 		"jumlah_sd": 15,
-		"jumlah_smp": 3,
-		"jumlah_sma": 3
+        "jumlah_smp": 3,
+        "jumlah_sma": 1,
+        "jumlah_smk": 1,
+        "jumlah_keaksaraan": 1
     },
     {
         "kecamatan": "Bandung Kulon",
@@ -509,9 +521,11 @@
         "umur_7_12": 15804,
 		"umur_13_15": 8353,
 		"umur_16_18": 4637,
-		"jumlah_sd": 41,
-		"jumlah_smp": 6,
-		"jumlah_sma": 7
+		"jumlah_sd": 40,
+        "jumlah_smp": 6,
+        "jumlah_sma": 3,
+        "jumlah_smk": 3,
+        "jumlah_keaksaraan": 1
     },
     {
         "kecamatan": "Bandung Wetan",
@@ -581,8 +595,10 @@
 		"umur_13_15": 1627,
 		"umur_16_18": 1556,
 		"jumlah_sd": 20,
-		"jumlah_smp": 12,
-		"jumlah_sma": 8
+        "jumlah_smp": 12,
+        "jumlah_sma": 6,
+        "jumlah_smk": 2,
+        "jumlah_keaksaraan": 0
     },
     {
         "kecamatan": "Batununggal",
@@ -657,8 +673,10 @@
 		"umur_13_15": 6953,
 		"umur_16_18": 4616,
 		"jumlah_sd": 32,
-		"jumlah_smp": 6,
-		"jumlah_sma": 3
+        "jumlah_smp": 6,
+        "jumlah_sma": 0,
+        "jumlah_smk": 2,
+        "jumlah_keaksaraan": 1
     },
     {
         "kecamatan": "Bojongloa Kaler",
@@ -730,8 +748,10 @@
 		"umur_13_15": 7208,
 		"umur_16_18": 3904,
 		"jumlah_sd": 20,
-		"jumlah_smp": 8,
-		"jumlah_sma": 11
+        "jumlah_smp": 8,
+        "jumlah_sma": 6,
+        "jumlah_smk": 4,
+        "jumlah_keaksaraan": 1
     },
     {
         "kecamatan": "Bojongloa Kidul",
@@ -804,8 +824,10 @@
 		"umur_13_15": 5022,
 		"umur_16_18": 2866,
 		"jumlah_sd": 22,
-		"jumlah_smp": 8,
-		"jumlah_sma": 11
+        "jumlah_smp": 8,
+        "jumlah_sma": 4,
+        "jumlah_smk": 6,
+        "jumlah_keaksaraan": 1
     },
     {
         "kecamatan": "Buahbatu",
@@ -876,8 +898,10 @@
 		"umur_13_15": 5866,
 		"umur_16_18": 4477,
 		"jumlah_sd": 26,
-		"jumlah_smp": 6,
-		"jumlah_sma": 14
+        "jumlah_smp": 6,
+        "jumlah_sma": 3,
+        "jumlah_smk": 9,
+        "jumlah_keaksaraan": 2
     },
     {
         "kecamatan": "Cibeunying Kaler",
@@ -948,8 +972,10 @@
 		"umur_13_15": 3832,
 		"umur_16_18": 2692,
 		"jumlah_sd": 20,
-		"jumlah_smp": 6,
-		"jumlah_sma": 15
+        "jumlah_smp": 6,
+        "jumlah_sma": 4,
+        "jumlah_smk": 9,
+        "jumlah_keaksaraan": 1
     },
     {
         "kecamatan": "Cibeunying Kidul",
@@ -1022,8 +1048,10 @@
 		"umur_13_15": 6064,
 		"umur_16_18": 3628,
 		"jumlah_sd": 43,
-		"jumlah_smp": 7,
-		"jumlah_sma": 8
+        "jumlah_smp": 7,
+        "jumlah_sma": 3,
+        "jumlah_smk": 4,
+        "jumlah_keaksaraan": 1
     },
     {
         "kecamatan": "Cibiru",
@@ -1094,8 +1122,10 @@
 		"umur_13_15": 4713,
 		"umur_16_18": 3958,
 		"jumlah_sd": 24,
-		"jumlah_smp": 6,
-		"jumlah_sma": 12
+        "jumlah_smp": 6,
+        "jumlah_sma": 6,
+        "jumlah_smk": 3,
+        "jumlah_keaksaraan": 3
     },
     {
         "kecamatan": "Cicendo",
@@ -1168,8 +1198,10 @@
 		"umur_13_15": 5547,
 		"umur_16_18": 3565,
 		"jumlah_sd": 44,
-		"jumlah_smp": 17,
-		"jumlah_sma": 19
+        "jumlah_smp": 17,
+        "jumlah_sma": 10,
+        "jumlah_smk": 8,
+        "jumlah_keaksaraan": 1
     },
     {
         "kecamatan": "Cidadap",
@@ -1239,8 +1271,10 @@
 		"umur_13_15": 2990,
 		"umur_16_18": 1569,
 		"jumlah_sd": 18,
-		"jumlah_smp": 6,
-		"jumlah_sma": 5
+        "jumlah_smp": 6,
+        "jumlah_sma": 3,
+        "jumlah_smk": 2,
+        "jumlah_keaksaraan": 0
     },
     {
         "kecamatan": "Cinambo",
@@ -1311,8 +1345,10 @@
 		"umur_13_15": 1452,
 		"umur_16_18": 909,
 		"jumlah_sd": 6,
-		"jumlah_smp": 1,
-		"jumlah_sma": 2
+        "jumlah_smp": 1,
+        "jumlah_sma": 0,
+        "jumlah_smk": 2,
+        "jumlah_keaksaraan": 0
     },
     {
         "kecamatan": "Coblong",
@@ -1385,8 +1421,10 @@
 		"umur_13_15": 6562,
 		"umur_16_18": 5379,
 		"jumlah_sd": 43,
-		"jumlah_smp": 11,
-		"jumlah_sma": 18
+        "jumlah_smp": 11,
+        "jumlah_sma": 13,
+        "jumlah_smk": 3,
+        "jumlah_keaksaraan": 2
     },
     {
         "kecamatan": "Gedebage",
@@ -1456,9 +1494,11 @@
         "umur_7_12": 4546,
 		"umur_13_15": 2384,
 		"umur_16_18": 1424,
-		"jumlah_sd": 10,
-		"jumlah_smp": 1,
-		"jumlah_sma": 3
+		"jumlah_sd": 9,
+        "jumlah_smp": 1,
+        "jumlah_sma": 1,
+        "jumlah_smk": 2,
+        "jumlah_keaksaraan": 0
     },
     {
         "kecamatan": "Kiaracondong",
@@ -1531,8 +1571,10 @@
 		"umur_13_15": 7318,
 		"umur_16_18": 5247,
 		"jumlah_sd": 41,
-		"jumlah_smp": 8,
-		"jumlah_sma": 19
+        "jumlah_smp": 8,
+        "jumlah_sma": 5,
+        "jumlah_smk": 10,
+        "jumlah_keaksaraan": 3
     },
     {
         "kecamatan": "Lengkong",
@@ -1605,9 +1647,11 @@
         "umur_7_12": 7226,
 		"umur_13_15": 4120,
 		"umur_16_18": 3320,
-		"jumlah_sd": 30,
-		"jumlah_smp": 13,
-		"jumlah_sma": 30
+		"jumlah_sd": 22,
+        "jumlah_smp": 3,
+        "jumlah_sma": 2,
+        "jumlah_smk": 0,
+        "jumlah_keaksaraan": 0
     },
     {
         "kecamatan": "Mandalajati",
@@ -1678,8 +1722,10 @@
 		"umur_13_15": 3885,
 		"umur_16_18": 2709,
 		"jumlah_sd": 22,
-		"jumlah_smp": 3,
-		"jumlah_sma": 2
+        "jumlah_smp": 3,
+        "jumlah_sma": 2,
+        "jumlah_smk": 0,
+        "jumlah_keaksaraan": 0
     },
     {
         "kecamatan": "Panyileukan",
@@ -1750,8 +1796,10 @@
 		"umur_13_15": 2219,
 		"umur_16_18": 1472,
 		"jumlah_sd": 10,
-		"jumlah_smp": 3,
-		"jumlah_sma": 3
+        "jumlah_smp": 3,
+        "jumlah_sma": 1,
+        "jumlah_smk": 1,
+        "jumlah_keaksaraan": 1
     },
     {
         "kecamatan": "Rancasari",
@@ -1822,8 +1870,10 @@
 		"umur_13_15": 4984,
 		"umur_16_18": 3431,
 		"jumlah_sd": 15,
-		"jumlah_smp": 3,
-		"jumlah_sma": 6
+        "jumlah_smp": 3,
+        "jumlah_sma": 1,
+        "jumlah_smk": 0,
+        "jumlah_keaksaraan": 5
     },
     {
         "kecamatan": "Regol",
@@ -1897,8 +1947,10 @@
 		"umur_13_15": 4801,
 		"umur_16_18": 3914,
 		"jumlah_sd": 36,
-		"jumlah_smp": 12,
-		"jumlah_sma": 11
+        "jumlah_smp": 12,
+        "jumlah_sma": 6,
+        "jumlah_smk": 3,
+        "jumlah_keaksaraan": 2
     },
     {
         "kecamatan": "Sukajadi",
@@ -1970,8 +2022,10 @@
 		"umur_13_15": 5798,
 		"umur_16_18": 3513,
 		"jumlah_sd": 39,
-		"jumlah_smp": 4,
-		"jumlah_sma": 9
+        "jumlah_smp": 4,
+        "jumlah_sma": 5,
+        "jumlah_smk": 2,
+        "jumlah_keaksaraan": 2
     },
     {
         "kecamatan": "Sukasari",
@@ -2041,9 +2095,11 @@
         "umur_7_12": 7840,
 		"umur_13_15": 4146,
 		"umur_16_18": 2645,
-		"jumlah_sd": 30,
-		"jumlah_smp": 12,
-		"jumlah_sma": 8
+		"jumlah_sd": 29,
+        "jumlah_smp": 11,
+        "jumlah_sma": 3,
+        "jumlah_smk": 3,
+        "jumlah_keaksaraan": 1
     },
     {
         "kecamatan": "Sumur Bandung",
@@ -2114,8 +2170,10 @@
 		"umur_13_15": 2190,
 		"umur_16_18": 1938,
 		"jumlah_sd": 26,
-		"jumlah_smp": 8,
-		"jumlah_sma": 15
+        "jumlah_smp": 8,
+        "jumlah_sma": 7,
+        "jumlah_smk": 6,
+        "jumlah_keaksaraan": 1
     },
     {
         "kecamatan": "Ujungberung",
@@ -2188,7 +2246,9 @@
 		"umur_13_15": 4973,
 		"umur_16_18": 2892,
 		"jumlah_sd": 19,
-		"jumlah_smp": 10,
-		"jumlah_sma": 9
+        "jumlah_smp": 10,
+        "jumlah_sma": 5,
+        "jumlah_smk": 4,
+        "jumlah_keaksaraan": 0
     }
 ]

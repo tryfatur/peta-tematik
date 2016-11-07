@@ -166,6 +166,8 @@ function openModal(e) {
 				$('#jumlahSD').text(': ' + result[i].jumlah_sd);
 				$('#jumlahSMP').text(': ' + result[i].jumlah_smp);
 				$('#jumlahSMA').text(': ' + result[i].jumlah_sma);
+				$('#jumlahSMK').text(': ' + result[i].jumlah_smk);
+				$('#jumlahKeaksaraan').text(': ' + result[i].jumlah_keaksaraan);
 				$('#usiaSD').text(': ' + result[i].umur_7_12);
 				$('#usiaSMP').text(': ' + result[i].umur_13_15);
 				$('#usiaSMA').text(': ' + result[i].umur_16_18);
