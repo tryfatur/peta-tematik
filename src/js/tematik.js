@@ -14,12 +14,15 @@ var kategori = [
 ];
 
 var tahun = [
+	{ "text": "2016", "value": "2016" },
 	{ "text": "2015", "value": "2015" },
 	{ "text": "2014", "value": "2014" },
 	{ "text": "2013", "value": "2013" },
 	{ "text": "2012", "value": "2012" },
+	{ "text": "2011", "value": "2011" },
 	{ "text": "2010", "value": "2010" },
 	{ "text": "2009", "value": "2009" },
+	{ "text": "2008", "value": "2008" }
 ];
 
 L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v9/tiles/256/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken).addTo(map);
@@ -114,7 +117,7 @@ function getColorBlue(d) {
 }
 
 function style(feature) {
-	globalStyle.fillColor = getColor(feature.properties._kepadatan._2015);
+	globalStyle.fillColor = getColor(feature.properties.pdt_2016);
 	
 	return globalStyle;
 }
@@ -151,9 +154,9 @@ function resetHighlight(e) {
 }
 
 function openModal(e) {
-	var kecamatan = e.target.feature.properties._url;
+	var kecamatan = e.target.feature.properties.url;
 
-	$.getJSON('src/json/data.json', function (result) {
+	$.getJSON('src/json/data-agregasi.json', function (result) {
 		var resultLength = result.length;
 		var kelurahan = '';
 		for (var i = 0 ; i < resultLength; i++) {
@@ -162,21 +165,28 @@ function openModal(e) {
 
 				$('#luasWilayah').text(': ' + result[i].luas_wilayah + ' Km2');
 				$('#kawasan').text(': ' + result[i].kawasan);
-				$('#populasi').text(': ' + result[i].populasi.p_2015);
-				$('#jumlahSD').text(': ' + result[i].jumlah_sd);
-				$('#jumlahSMP').text(': ' + result[i].jumlah_smp);
-				$('#jumlahSMA').text(': ' + result[i].jumlah_sma);
-				$('#jumlahSMK').text(': ' + result[i].jumlah_smk);
-				$('#jumlahKeaksaraan').text(': ' + result[i].jumlah_keaksaraan);
+				$('#populasi').text(': ' + result[i].pop_2016);
+				$('#jumlahSD').text(': ' + result[i].jml_sd);
+				$('#jumlahSMP').text(': ' + result[i].jml_smp);
+				$('#jumlahSMA').text(': ' + result[i].jml_sma);
+				$('#jumlahSMK').text(': ' + result[i].jml_smk);
+				$('#jumlahKeaksaraan').text(': ' + result[i].jml_keaksaraan);
 				$('#usiaSD').text(': ' + result[i].umur_7_12);
 				$('#usiaSMP').text(': ' + result[i].umur_13_15);
 				$('#usiaSMA').text(': ' + result[i].umur_16_18);
+				$('#jumlahPtkSD').text(': ' + result[i].jml_ptk_sd);
+				$('#jumlahPtkSMP').text(': ' + result[i].jml_ptk_smp);
+				$('#jumlahPtkSMA').text(': ' + result[i].jml_ptk_sma);
+				$('#jumlahPtkSMK').text(': ' + result[i].jml_ptk_smk);
+				$('#jumlahPtkKeaksaraan').text(': ' + result[i].jml_ptk_keaksaraan);
 				
-				var kelurahanLength = result[i].kelurahan.length;
+				/*var kelurahanLength = result[i].kelurahan.length;
 				for(var j = 0; j < kelurahanLength; j++){
 					kelurahan += result[i].kelurahan[j] + ', ';
-				}
+				}*/
 				$('#kelurahan').text(': ' + kelurahan);
+
+				console.log(result[i]);
 			};
 		}
 	});
@@ -195,7 +205,7 @@ function dataStatistik(data) {
 				style: { fontFamily: 'PT Sans'}
 			},
 			title: {
-				text: 'Data Kependudukan di Kecamatan ' + data.kecamatan + ' Tahun 2009 - 2015'
+				text: 'Data Kependudukan di Kecamatan ' + data.kecamatan + ' Tahun 2008 - 2016'
 			},
 			subtitle: {
 				text: 'Sumber: Portal Data Bandung'
@@ -209,7 +219,7 @@ function dataStatistik(data) {
 				}
 			},
 			xAxis: {
-				categories: ['2009', '2010', '2011', '2012', '2013', '2014', '2015'],
+				categories: ['2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016'],
 				title: {
 					text: 'Tahun'
 				}
@@ -223,76 +233,88 @@ function dataStatistik(data) {
 			series: [{
 				name: 'Jumlah Populasi',
 				data: [
-					data.populasi.p_2009, 
-					data.populasi.p_2010, 
-					data.populasi.p_2011, 
-					data.populasi.p_2012, 
-					data.populasi.p_2013, 
-					data.populasi.p_2014, 
-					data.populasi.p_2015
+					data.pop_2008,
+					data.pop_2009, 
+					data.pop_2010, 
+					data.pop_2011, 
+					data.pop_2012, 
+					data.pop_2013, 
+					data.pop_2014, 
+					data.pop_2015,
+					data.pop_2016
 				]
 			},
 			{
 				name: 'Jumlah Kepadatan Penduduk (km2)',
 				data: [
-					data.kepadatan.k_2009, 
-					data.kepadatan.k_2010, 
-					data.kepadatan.k_2011, 
-					data.kepadatan.k_2012, 
-					data.kepadatan.k_2013, 
-					data.kepadatan.k_2014, 
-					data.kepadatan.k_2015
+					data.pdt_2008, 
+					data.pdt_2009, 
+					data.pdt_2010, 
+					data.pdt_2011, 
+					data.pdt_2012, 
+					data.pdt_2013, 
+					data.pdt_2014, 
+					data.pdt_2015,
+					data.pdt_2016
 				]
 			},
 			{
 				name: 'Jumlah Populasi Pria',
 				data: [
-					data.populasi_pria.pp_2009, 
-					data.populasi_pria.pp_2010, 
-					data.populasi_pria.pp_2011, 
-					data.populasi_pria.pp_2012, 
-					data.populasi_pria.pp_2013, 
-					data.populasi_pria.pp_2014, 
-					data.populasi_pria.pp_2015
+					data.pop_pria_2008, 
+					data.pop_pria_2009, 
+					data.pop_pria_2010, 
+					data.pop_pria_2011, 
+					data.pop_pria_2012, 
+					data.pop_pria_2013, 
+					data.pop_pria_2014, 
+					data.pop_pria_2015,
+					data.pop_pria_2016
 				],
 				visible: false
 			},
 			{
 				name: 'Jumlah Kepadatan Penduduk Pria (km2)',
 				data: [
-					data.kepadatan_pria.kp_2009, 
-					data.kepadatan_pria.kp_2010, 
-					data.kepadatan_pria.kp_2011, 
-					data.kepadatan_pria.kp_2012, 
-					data.kepadatan_pria.kp_2013, 
-					data.kepadatan_pria.kp_2014, 
-					data.kepadatan_pria.kp_2015
+					data.pdt_pria_2008, 
+					data.pdt_pria_2009, 
+					data.pdt_pria_2010, 
+					data.pdt_pria_2011, 
+					data.pdt_pria_2012, 
+					data.pdt_pria_2013, 
+					data.pdt_pria_2014, 
+					data.pdt_pria_2015,
+					data.pdt_pria_2016
 				],
 				visible: false
 			},
 			{
 				name: 'Jumlah Populasi Wanita',
 				data: [
-					data.populasi_wanita.pw_2009, 
-					data.populasi_wanita.pw_2010, 
-					data.populasi_wanita.pw_2011, 
-					data.populasi_wanita.pw_2012, 
-					data.populasi_wanita.pw_2013, 
-					data.populasi_wanita.pw_2014, 
-					data.populasi_wanita.pw_2015
+					data.pop_wanita_2008,
+					data.pop_wanita_2009,
+					data.pop_wanita_2010,
+					data.pop_wanita_2011,
+					data.pop_wanita_2012,
+					data.pop_wanita_2013,
+					data.pop_wanita_2014,
+					data.pop_wanita_2015,
+					data.pop_wanita_2016
 				],
 				visible: false
 			},
 			{
 				name: 'Jumlah Kepadatan Penduduk Wanita (km2)',
 				data: [
-					data.kepadatan_wanita.kw_2009, 
-					data.kepadatan_wanita.kw_2010, 
-					data.kepadatan_wanita.kw_2011, 
-					data.kepadatan_wanita.kw_2012, 
-					data.kepadatan_wanita.kw_2013, 
-					data.kepadatan_wanita.kw_2014, 
-					data.kepadatan_wanita.kw_2015
+					data.pdt_wanita_2009, 
+					data.pdt_wanita_2009, 
+					data.pdt_wanita_2010, 
+					data.pdt_wanita_2011, 
+					data.pdt_wanita_2012, 
+					data.pdt_wanita_2013, 
+					data.pdt_wanita_2014, 
+					data.pdt_wanita_2015,
+					data.pdt_wanita_2016
 				],
 				visible: false
 			}]
@@ -337,18 +359,34 @@ $('#kategori').change(function () {
 
 $("#tahun").change(function () {
 	switch(this.value){
-		case "2015": 
+		case "2016": 
 			if (dataKategori == 'densityMale') {
 				geojson.setStyle(function style(f) {
-					return { fillColor: getColorBlue(f.properties._kepadatan_pria.kp_2015) }
+					return { fillColor: getColorBlue(f.properties.pdt_pria_2016) }
 				});
 			}else if (dataKategori == 'densityFemale') {
 				geojson.setStyle(function style(f) {
-					return { fillColor: getColorPink(f.properties._kepadatan_wanita.kw_2015) }
+					return { fillColor: getColorPink(f.properties.pdt_wanita_2016) }
 				});
 			}else{
 				geojson.setStyle(function style(f) {
-					return { fillColor: getColor(f.properties._kepadatan._2015) }
+					return { fillColor: getColor(f.properties.pdt_2016) }
+				});
+			}
+		break;
+
+		case "2015": 
+			if (dataKategori == 'densityMale') {
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColorBlue(f.properties.pdt_pria_2015) }
+				});
+			}else if (dataKategori == 'densityFemale') {
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColorPink(f.properties.pdt_wanita_2015) }
+				});
+			}else{
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColor(f.properties.pdt_2015) }
 				});
 			}
 		break;
@@ -356,15 +394,15 @@ $("#tahun").change(function () {
 		case "2014": 
 			if (dataKategori == 'densityMale') {
 				geojson.setStyle(function style(f) {
-					return { fillColor: getColorBlue(f.properties._kepadatan_pria.kp_2014) }
+					return { fillColor: getColorBlue(f.properties.pdt_pria_2014) }
 				});
 			}else if (dataKategori == 'densityFemale') {
 				geojson.setStyle(function style(f) {
-					return { fillColor: getColorPink(f.properties._kepadatan_wanita.kw_2014) }
+					return { fillColor: getColorPink(f.properties.pdt_wanita_2014) }
 				});
 			}else{
 				geojson.setStyle(function style(f) {
-					return { fillColor: getColor(f.properties._kepadatan._2014) }
+					return { fillColor: getColor(f.properties.pdt_2014) }
 				});
 			}
 		break;
@@ -372,15 +410,15 @@ $("#tahun").change(function () {
 		case "2013": 
 			if (dataKategori == 'densityMale') {
 				geojson.setStyle(function style(f) {
-					return { fillColor: getColorBlue(f.properties._kepadatan_pria.kp_2013) }
+					return { fillColor: getColorBlue(f.properties.pdt_pria_2013) }
 				});
 			}else if (dataKategori == 'densityFemale') {
 				geojson.setStyle(function style(f) {
-					return { fillColor: getColorPink(f.properties._kepadatan_wanita.kw_2013) }
+					return { fillColor: getColorPink(f.properties.pdt_wanita_2013) }
 				});
 			}else{
 				geojson.setStyle(function style(f) {
-					return { fillColor: getColor(f.properties._kepadatan._2013) }
+					return { fillColor: getColor(f.properties.pdt_2013) }
 				});
 			}
 		break;
@@ -388,15 +426,31 @@ $("#tahun").change(function () {
 		case "2012": 
 			if (dataKategori == 'densityMale') {
 				geojson.setStyle(function style(f) {
-					return { fillColor: getColorBlue(f.properties._kepadatan_pria.kp_2012) }
+					return { fillColor: getColorBlue(f.properties.pdt_pria_2012) }
 				});
 			}else if (dataKategori == 'densityFemale') {
 				geojson.setStyle(function style(f) {
-					return { fillColor: getColorPink(f.properties._kepadatan_wanita.kw_2012) }
+					return { fillColor: getColorPink(f.properties.pdt_wanita_2012) }
 				});
 			}else{
 				geojson.setStyle(function style(f) {
-					return { fillColor: getColor(f.properties._kepadatan._2012) }
+					return { fillColor: getColor(f.properties.pdt_2012) }
+				});
+			}
+		break;
+
+		case "2011": 
+			if (dataKategori == 'densityMale') {
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColorBlue(f.properties.pdt_pria_2011) }
+				});
+			}else if (dataKategori == 'densityFemale') {
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColorPink(f.properties.pdt_wanita_2011) }
+				});
+			}else{
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColor(f.properties.pdt_2011) }
 				});
 			}
 		break;
@@ -404,15 +458,15 @@ $("#tahun").change(function () {
 		case "2010": 
 			if (dataKategori == 'densityMale') {
 				geojson.setStyle(function style(f) {
-					return { fillColor: getColorBlue(f.properties._kepadatan_pria.kp_2010) }
+					return { fillColor: getColorBlue(f.properties.pdt_pria_2010) }
 				});
 			}else if (dataKategori == 'densityFemale') {
 				geojson.setStyle(function style(f) {
-					return { fillColor: getColorPink(f.properties._kepadatan_wanita.kw_2010) }
+					return { fillColor: getColorPink(f.properties.pdt_wanita_2010) }
 				});
 			}else{
 				geojson.setStyle(function style(f) {
-					return { fillColor: getColor(f.properties._kepadatan._2010) }
+					return { fillColor: getColor(f.properties.pdt_2010) }
 				});
 			}
 		break;
@@ -420,20 +474,36 @@ $("#tahun").change(function () {
 		case "2009": 
 			if (dataKategori == 'densityMale') {
 				geojson.setStyle(function style(f) {
-					return { fillColor: getColorBlue(f.properties._kepadatan_pria.kp_2009) }
+					return { fillColor: getColorBlue(f.properties.pdt_pria_2009) }
 				});
 			}else if (dataKategori == 'densityFemale') {
 				geojson.setStyle(function style(f) {
-					return { fillColor: getColorPink(f.properties._kepadatan_wanita.kw_2009) }
+					return { fillColor: getColorPink(f.properties.pdt_wanita_2009) }
 				});
 			}else{
 				geojson.setStyle(function style(f) {
-					return { fillColor: getColor(f.properties._kepadatan._2009) }
+					return { fillColor: getColor(f.properties.pdt_2009) }
+				});
+			}
+		break;
+
+		case "2008": 
+			if (dataKategori == 'densityMale') {
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColorBlue(f.properties.pdt_pria_2008) }
+				});
+			}else if (dataKategori == 'densityFemale') {
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColorPink(f.properties.pdt_wanita_2008) }
+				});
+			}else{
+				geojson.setStyle(function style(f) {
+					return { fillColor: getColor(f.properties.pdt_2008) }
 				});
 			}
 		break;
 	};
 });
 
-map.attributionControl.addAttribution('Data Kependudukan &copy; <a href="http://data.bandung.go.id/">Portal Data Bandung</a>');
-map.attributionControl.addAttribution('<a href="https://github.com/tryfatur" target="_blank">Try Fathur Rachman</a> &copy 2016.');
+map.attributionControl.addAttribution('Data Kependudukan &copy; <a href="http://disdukcapil.bandung.go.id/">Dinas Kependudukan dan Pencatatan Sipil</a>');
+map.attributionControl.addAttribution('<a href="http://portal.bandung.go.id/" target="_blank">Tim Open Data Kota Bandung</a> &copy 2016.');
