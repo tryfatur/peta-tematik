@@ -36,7 +36,7 @@ info.onAdd = function (map) {
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
 	this._div.innerHTML = '<h4><b>Peta Tematik Kepadatan Kota Bandung</b></h4>' +  (props ?
-		'<b>Kecamatan: ' + props._kecamatan + '</b>' : 'Pilih Kecamatan');
+		'<b>Kecamatan: ' + props.kecamatan + '</b>' : 'Pilih Kecamatan');
 };
 
 info.addTo(map);
@@ -163,30 +163,32 @@ function openModal(e) {
 			if (result[i].url == kecamatan) {
 				dataStatistik(result[i]);
 
-				$('#luasWilayah').text(': ' + result[i].luas_wilayah + ' Km2');
-				$('#kawasan').text(': ' + result[i].kawasan);
-				$('#populasi').text(': ' + result[i].pop_2016);
-				$('#jumlahSD').text(': ' + result[i].jml_sd);
-				$('#jumlahSMP').text(': ' + result[i].jml_smp);
-				$('#jumlahSMA').text(': ' + result[i].jml_sma);
-				$('#jumlahSMK').text(': ' + result[i].jml_smk);
-				$('#jumlahKeaksaraan').text(': ' + result[i].jml_keaksaraan);
-				$('#usiaSD').text(': ' + result[i].umur_7_12);
-				$('#usiaSMP').text(': ' + result[i].umur_13_15);
-				$('#usiaSMA').text(': ' + result[i].umur_16_18);
-				$('#jumlahPtkSD').text(': ' + result[i].jml_ptk_sd);
-				$('#jumlahPtkSMP').text(': ' + result[i].jml_ptk_smp);
-				$('#jumlahPtkSMA').text(': ' + result[i].jml_ptk_sma);
-				$('#jumlahPtkSMK').text(': ' + result[i].jml_ptk_smk);
-				$('#jumlahPtkKeaksaraan').text(': ' + result[i].jml_ptk_keaksaraan);
-				
-				/*var kelurahanLength = result[i].kelurahan.length;
-				for(var j = 0; j < kelurahanLength; j++){
-					kelurahan += result[i].kelurahan[j] + ', ';
-				}*/
-				$('#kelurahan').text(': ' + kelurahan);
+				$('#luasWilayah').text(result[i].luas_wilayah);
+				$('#kawasan').text(result[i].kawasan);
+				$('#populasi').text(result[i].pop_2016);
+				$('#jumlahKelurahan').text(result[i].jumlah_kelurahan);
 
-				console.log(result[i]);
+				$('#jumlahSD').text(result[i].jml_sd);
+				$('#jumlahSMP').text(result[i].jml_smp);
+				$('#jumlahSMA').text(result[i].jml_sma);
+				$('#jumlahSMK').text(result[i].jml_smk);
+				$('#jumlahKeaksaraan').text(result[i].jml_keaksaraan);
+
+				$('#usiaSD').text(result[i].umur_7_12);
+				$('#usiaSMP').text(result[i].umur_13_15);
+				$('#usiaSMA').text(result[i].umur_16_18);
+
+				$('#jumlahPtkSD').text(result[i].jml_ptk_sd);
+				$('#jumlahPtkSMP').text(result[i].jml_ptk_smp);
+				$('#jumlahPtkSMA').text(result[i].jml_ptk_sma);
+				$('#jumlahPtkSMK').text(result[i].jml_ptk_smk);
+				$('#jumlahPtkKeaksaraan').text(result[i].jml_ptk_keaksaraan);
+
+				$('#jumlahPdSD').text(result[i].jml_pd_sd);
+				$('#jumlahPdSMP').text(result[i].jml_pd_smp);
+				$('#jumlahPdSMA').text(result[i].jml_pd_sma);
+				$('#jumlahPdSMK').text(result[i].jml_pd_smk);
+				$('#jumlahPdKeaksaraan').text(result[i].jml_pd_keaksaraan);
 			};
 		}
 	});
@@ -205,7 +207,7 @@ function dataStatistik(data) {
 				style: { fontFamily: 'PT Sans'}
 			},
 			title: {
-				text: 'Data Kependudukan di Kecamatan ' + data.kecamatan + ' Tahun 2008 - 2016'
+				text: 'Statistik Kependudukan di Kecamatan ' + data.kecamatan + ' Tahun 2008 - 2016'
 			},
 			subtitle: {
 				text: 'Sumber: Portal Data Bandung'

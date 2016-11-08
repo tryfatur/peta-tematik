@@ -10,9 +10,10 @@
 		<link rel="shortcut icon" href="src/worldwide.png" type="image/png">
 		<link rel="icon" href="src/worldwide.png" type="image/png">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
-		<link rel='stylesheet' href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' />
-		<link rel='stylesheet' href="https://fonts.googleapis.com/css?family=PT+Sans">
-		<link rel='stylesheet' href="src/style.css">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans">
+		<link rel="stylesheet" href="src/style.css">
 	</head>
 	<body>
 		
@@ -24,97 +25,140 @@
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						<h4 class="modal-title">
-							<span class="glyphicon glyphicon-signal" aria-hidden="true"></span> Data Statistik
+							<span class="glyphicon glyphicon-signal" aria-hidden="true"></span> Demografi Kependudukan & Pendidikan
 						</h4>
 					</div>
+					<!-- Line Graph Populasi dan Kepdatan Penduduk -->
 					<div class="text-center">
 						<div id="statistik"></div>
 					</div>
+					<hr width="75%">
+
+					<!-- Demografi Kependudukan -->
 					<div class="modal-body">
-						<div class="row">
-							<div class="col-md-12">
-								<h3>Demografi Kependudukan</h3>
-								<table class="table">
-									<tr>
-										<td>Jumlah Penduduk (2016)</td>
-										<td id="populasi">:</td>
-									</tr>
-									<tr>
-										<td>Luas Wilayah</td>
-										<td id="luasWilayah"></td>
-									</tr>
-									<tr>
-										<td>Kawasan</td>
-										<td id="kawasan"></td>
-									</tr>
-									<!-- <tr>
-										<td>Jumlah Kelurahan</td>
-										<td id="kelurahan"></td>
-									</tr> -->
-								</table>
+						<div class="row text-center">
+							<div class="col-md-3">
+								<i class="fa fa-fw fa-users fa-4x"></i>
+								<h2 id="populasi"></h2>
+								<p>Jumlah Penduduk (2016)</p>
+							</div>
+							<div class="col-md-3">
+								<i class="fa fa-fw fa-globe fa-4x"></i>
+								<h2 id="luasWilayah"></h2>
+								<p>Luas Wilayah (Km<sup>2</sup>)</p>
+							</div>
+							<div class="col-md-3">
+								<i class="fa fa-fw fa-map fa-4x"></i>
+								<h2 id="kawasan"></h2>
+								<p>Kawasan</p>
+							</div>
+							<div class="col-md-3">
+								<i class="fa fa-fw fa-home fa-4x"></i>
+								<h2 id="jumlahKelurahan"></h2>
+								<p>Jumlah Kelurahan</p>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<h3>Demografi Pendidikan</h3>
-								<table class="table">
-									<tr>
-										<td>Jumlah SD</td>
-										<td id="jumlahSD">:</td>
-									</tr>
-									<tr>
-										<td>Jumlah SMP</td>
-										<td id="jumlahSMP">:</td>
-									</tr>
-									<tr>
-										<td>Jumlah SMA</td>
-										<td id="jumlahSMA">:</td>
-									</tr>
-									<tr>
-										<td>Jumlah SMK</td>
-										<td id="jumlahSMK">:</td>
-									</tr>
-									<tr>
-										<td>Jumlah Sekolah Keaksaraan</td>
-										<td id="jumlahKeaksaraan">:</td>
-									</tr>
-									<tr>
-										<td>Jumlah Usia Sekolah SD (7-12)</td>
-										<td id="usiaSD">:</td>
-									</tr>
-									<tr>
-										<td>Jumlah Usia Sekolah SMP (13-15)</td>
-										<td id="usiaSMP">:</td>
-									</tr>
-									<tr>
-										<td>Jumlah Usia Sekolah SMA (16-18)</td>
-										<td id="usiaSMA">:</td>
-									</tr>
-									<tr>
-										<td>Jumlah PTK SD(Guru dan Tata Usaha)</td>
-										<td id="jumlahPtkSD">:</td>
-									</tr>
-									<tr>
-										<td>Jumlah PTK SMP(Guru dan Tata Usaha)</td>
-										<td id="jumlahPtkSMP">:</td>
-									</tr>
-									<tr>
-										<td>Jumlah PTK SMA(Guru dan Tata Usaha)</td>
-										<td id="jumlahPtkSMA">:</td>
-									</tr>
-									<tr>
-										<td>Jumlah PTK SMK(Guru dan Tata Usaha)</td>
-										<td id="jumlahPtkSMK">:</td>
-									</tr>
-									<tr>
-										<td>Jumlah PTK Keaksaraan(Guru dan Tata Usaha)</td>
-										<td id="jumlahPtkKeaksaraan">:</td>
-									</tr>
-								</table>
+						<hr width="75%">
+
+						<!-- Line Usia Sekolah -->
+						<div class="row text-center">
+							<div class="col-md-4">
+								<h2 id="usiaSD"></h2>
+								<p>Usia SD (7-12 Tahun)</p>
+							</div>
+							<div class="col-md-4">
+								<h2 id="usiaSMP"></h2>
+								<p>Usia SMP (13-15 Tahun)</p>
+							</div>
+							<div class="col-md-4">
+								<h2 id="usiaSMA"></h2>
+								<p>Usia SMA (16-18 Tahun)</p>
+							</div>
+						</div>
+						<hr width="75%">
+
+						<!-- Jumlah Sekolah -->
+						<div class="row text-center">
+							<div class="col-md-1"></div>
+							<div class="col-md-2">
+								<h2 id="jumlahSD"></h2>
+								<p>Sekolah Dasar</p>
+							</div>
+							<div class="col-md-2">
+								<h2 id="jumlahSMP"></h2>
+								<p>Sekolah Menengah Pertama</p>
+							</div>
+							<div class="col-md-2">
+								<h2 id="jumlahSMA"></h2>
+								<p>Sekolah Menengah Atas</p>
+							</div>
+							<div class="col-md-2">
+								<h2 id="jumlahSMK"></h2>
+								<p>Sekolah Menengah Kejuruan</p>
+							</div>
+							<div class="col-md-2">
+								<h2 id="jumlahKeaksaraan"></h2>
+								<p>Sekolah Keaksaraan</p>
+							</div>
+						</div>
+						<hr width="75%">
+
+						<!-- Jumlah PTK -->
+						<div class="row text-center">
+							<div class="col-md-1"></div>
+							<div class="col-md-2">
+								<h2 id="jumlahPtkSD"></h2>
+								<p>PTK Sekolah Dasar</p>
+							</div>
+							<div class="col-md-2">
+								<h2 id="jumlahPtkSMP"></h2>
+								<p>PTK Sekolah Menengah Pertama</p>
+							</div>
+							<div class="col-md-2">
+								<h2 id="jumlahPtkSMA"></h2>
+								<p>PTK Sekolah Menengah Atas</p>
+							</div>
+							<div class="col-md-2">
+								<h2 id="jumlahPtkSMK"></h2>
+								<p>PTK Sekolah Menengah Kejuruan</p>
+							</div>
+							<div class="col-md-2">
+								<h2 id="jumlahPtkKeaksaraan"></h2>
+								<p>PTK Sekolah Keaksaraan</p>
+							</div>
+						</div>
+						<hr width="75%">
+
+						<!-- Jumlah PD -->
+						<div class="row text-center">
+							<div class="col-md-1"></div>
+							<div class="col-md-2">
+								<h2 id="jumlahPdSD"></h2>
+								<p>Peserta Didik<br/>Sekolah Dasar</p>
+							</div>
+							<div class="col-md-2">
+								<h2 id="jumlahPdSMP"></h2>
+								<p>Peserta Didik<br/>Sekolah Menengah Pertama</p>
+							</div>
+							<div class="col-md-2">
+								<h2 id="jumlahPdSMA"></h2>
+								<p>Peserta Didik<br/>Sekolah Menengah Atas</p>
+							</div>
+							<div class="col-md-2">
+								<h2 id="jumlahPdSMK"></h2>
+								<p>Peserta Didik<br/>Sekolah Menengah Kejuruan</p>
+							</div>
+							<div class="col-md-2">
+								<h2 id="jumlahPdKeaksaraan"></h2>
+								<p>Peserta Didik<br/>Sekolah Keaksaraan</p>
 							</div>
 						</div>
 					</div>
-					<!-- <div class="modal-footer"></div> -->
+					<div class="modal-footer">
+						<p class="text-muted text-center">
+							Sumber Data: Dinas Kependudukan dan Pencatatan Sipil, Dinas Pendidikan Kota Bandung, Kementerian Pendidikan dan Kebudayaan
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
