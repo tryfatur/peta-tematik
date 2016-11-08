@@ -25,7 +25,7 @@ var tahun = [
 	{ "text": "2008", "value": "2008" }
 ];
 
-L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v9/tiles/256/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken).addTo(map);
+L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken).addTo(map);
 
 info.onAdd = function (map) {
 	this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
@@ -165,30 +165,30 @@ function openModal(e) {
 
 				$('#luasWilayah').text(result[i].luas_wilayah);
 				$('#kawasan').text(result[i].kawasan);
-				$('#populasi').text(result[i].pop_2016);
+				$('#populasi').text(accounting.formatNumber(result[i].pop_2016, 0, '.'));
 				$('#jumlahKelurahan').text(result[i].jumlah_kelurahan);
 
-				$('#jumlahSD').text(result[i].jml_sd);
-				$('#jumlahSMP').text(result[i].jml_smp);
-				$('#jumlahSMA').text(result[i].jml_sma);
-				$('#jumlahSMK').text(result[i].jml_smk);
-				$('#jumlahKeaksaraan').text(result[i].jml_keaksaraan);
+				$('#jumlahSD').text(accounting.formatNumber(result[i].jml_sd, 0, '.'));
+				$('#jumlahSMP').text(accounting.formatNumber(result[i].jml_smp, 0, '.'));
+				$('#jumlahSMA').text(accounting.formatNumber(result[i].jml_sma, 0, '.'));
+				$('#jumlahSMK').text(accounting.formatNumber(result[i].jml_smk, 0, '.'));
+				$('#jumlahKeaksaraan').text(accounting.formatNumber(result[i].jml_keaksaraan, 0, '.'));
 
-				$('#usiaSD').text(result[i].umur_7_12);
-				$('#usiaSMP').text(result[i].umur_13_15);
-				$('#usiaSMA').text(result[i].umur_16_18);
+				$('#usiaSD').text(accounting.formatNumber(result[i].umur_7_12, 0, '.'));
+				$('#usiaSMP').text(accounting.formatNumber(result[i].umur_13_15, 0, '.'));
+				$('#usiaSMA').text(accounting.formatNumber(result[i].umur_16_18, 0, '.'));
 
-				$('#jumlahPtkSD').text(result[i].jml_ptk_sd);
-				$('#jumlahPtkSMP').text(result[i].jml_ptk_smp);
-				$('#jumlahPtkSMA').text(result[i].jml_ptk_sma);
-				$('#jumlahPtkSMK').text(result[i].jml_ptk_smk);
-				$('#jumlahPtkKeaksaraan').text(result[i].jml_ptk_keaksaraan);
+				$('#jumlahPtkSD').text(accounting.formatNumber(result[i].jml_ptk_sd, 0, '.'));
+				$('#jumlahPtkSMP').text(accounting.formatNumber(result[i].jml_ptk_smp, 0, '.'));
+				$('#jumlahPtkSMA').text(accounting.formatNumber(result[i].jml_ptk_sma, 0, '.'));
+				$('#jumlahPtkSMK').text(accounting.formatNumber(result[i].jml_ptk_smk, 0, '.'));
+				$('#jumlahPtkKeaksaraan').text(accounting.formatNumber(result[i].jml_ptk_keaksaraan, 0, '.'));
 
-				$('#jumlahPdSD').text(result[i].jml_pd_sd);
-				$('#jumlahPdSMP').text(result[i].jml_pd_smp);
-				$('#jumlahPdSMA').text(result[i].jml_pd_sma);
-				$('#jumlahPdSMK').text(result[i].jml_pd_smk);
-				$('#jumlahPdKeaksaraan').text(result[i].jml_pd_keaksaraan);
+				$('#jumlahPdSD').text(accounting.formatNumber(result[i].jml_pd_sd, 0, '.'));
+				$('#jumlahPdSMP').text(accounting.formatNumber(result[i].jml_pd_smp, 0, '.'));
+				$('#jumlahPdSMA').text(accounting.formatNumber(result[i].jml_pd_sma, 0, '.'));
+				$('#jumlahPdSMK').text(accounting.formatNumber(result[i].jml_pd_smk, 0, '.'));
+				$('#jumlahPdKeaksaraan').text(accounting.formatNumber(result[i].jml_pd_keaksaraan, 0, '.'));
 			};
 		}
 	});
