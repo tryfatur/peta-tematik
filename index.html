@@ -25,132 +25,191 @@
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						<h4 class="modal-title">
-							<span class="glyphicon glyphicon-signal" aria-hidden="true"></span> Demografi Kependudukan & Pendidikan
+							<i class="fa fa-fw fa-bar-chart"> </i><span id="namaKecamatan"></span>
 						</h4>
 					</div>
-					<!-- Line Graph Populasi dan Kepdatan Penduduk -->
-					<div class="text-center">
-						<div id="statistik"></div>
-					</div>
-					<hr width="75%">
 
 					<!-- Demografi Kependudukan -->
 					<div class="modal-body">
-						<div class="row text-center">
-							<div class="col-md-3">
-								<i class="fa fa-fw fa-users fa-4x"></i>
-								<h2 id="populasi"></h2>
-								<p>Jumlah Penduduk (2016)</p>
-							</div>
-							<div class="col-md-3">
-								<i class="fa fa-fw fa-globe fa-4x"></i>
-								<h2 id="luasWilayah"></h2>
-								<p>Luas Wilayah (Km<sup>2</sup>)</p>
-							</div>
-							<div class="col-md-3">
-								<i class="fa fa-fw fa-map fa-4x"></i>
-								<h2 id="kawasan"></h2>
-								<p>Kawasan</p>
-							</div>
-							<div class="col-md-3">
-								<i class="fa fa-fw fa-home fa-4x"></i>
-								<h2 id="jumlahKelurahan"></h2>
-								<p>Jumlah Kelurahan</p>
-							</div>
-						</div>
-						<hr width="75%">
+						<div role="tabpanel">
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" class="active">
+									<a href="#kependudukan" aria-controls="kependudukan" role="tab" data-toggle="tab">Kependudukan</a>
+								</li>
+								<li role="presentation">
+									<a href="#statistikPenduduk" aria-controls="statistikPenduduk" role="tab" data-toggle="tab">Statistik Penduduk</a>
+								</li>
+								<li role="presentation">
+									<a href="#usiaSekolah" aria-controls="tab" role="tab" data-toggle="tab">Usia Sekolah</a>
+								</li>
+								<li role="presentation">
+									<a href="#sekolahDasar" aria-controls="tab" role="tab" data-toggle="tab">SD</a>
+								</li>
+								<li role="presentation">
+									<a href="#sekolahMenengahPertama" aria-controls="tab" role="tab" data-toggle="tab">SMP</a>
+								</li>
+								<li role="presentation">
+									<a href="#sekolahMenengahAtas" aria-controls="tab" role="tab" data-toggle="tab">SMA</a>
+								</li>
+								<li role="presentation">
+									<a href="#sekolahMenengahKejuruan" aria-controls="tab" role="tab" data-toggle="tab">SMK</a>
+								</li>
+								<li role="presentation">
+									<a href="#sekolahKeaksaraan" aria-controls="tab" role="tab" data-toggle="tab">Sekolah Keaksaraan</a>
+								</li>
+							</ul>
 
-						<!-- Line Usia Sekolah -->
-						<div class="row text-center">
-							<div class="col-md-4">
-								<h2 id="usiaSD"></h2>
-								<p>Usia SD (7-12 Tahun)</p>
-							</div>
-							<div class="col-md-4">
-								<h2 id="usiaSMP"></h2>
-								<p>Usia SMP (13-15 Tahun)</p>
-							</div>
-							<div class="col-md-4">
-								<h2 id="usiaSMA"></h2>
-								<p>Usia SMA (16-18 Tahun)</p>
-							</div>
-						</div>
-						<hr width="75%">
-
-						<!-- Jumlah Sekolah -->
-						<div class="row text-center">
-							<div class="col-md-1"></div>
-							<div class="col-md-2">
-								<h2 id="jumlahSD"></h2>
-								<p>Sekolah Dasar</p>
-							</div>
-							<div class="col-md-2">
-								<h2 id="jumlahSMP"></h2>
-								<p>Sekolah Menengah Pertama</p>
-							</div>
-							<div class="col-md-2">
-								<h2 id="jumlahSMA"></h2>
-								<p>Sekolah Menengah Atas</p>
-							</div>
-							<div class="col-md-2">
-								<h2 id="jumlahSMK"></h2>
-								<p>Sekolah Menengah Kejuruan</p>
-							</div>
-							<div class="col-md-2">
-								<h2 id="jumlahKeaksaraan"></h2>
-								<p>Sekolah Keaksaraan</p>
-							</div>
-						</div>
-						<hr width="75%">
-
-						<!-- Jumlah PTK -->
-						<div class="row text-center">
-							<div class="col-md-1"></div>
-							<div class="col-md-2">
-								<h2 id="jumlahPtkSD"></h2>
-								<p>PTK Sekolah Dasar</p>
-							</div>
-							<div class="col-md-2">
-								<h2 id="jumlahPtkSMP"></h2>
-								<p>PTK Sekolah Menengah Pertama</p>
-							</div>
-							<div class="col-md-2">
-								<h2 id="jumlahPtkSMA"></h2>
-								<p>PTK Sekolah Menengah Atas</p>
-							</div>
-							<div class="col-md-2">
-								<h2 id="jumlahPtkSMK"></h2>
-								<p>PTK Sekolah Menengah Kejuruan</p>
-							</div>
-							<div class="col-md-2">
-								<h2 id="jumlahPtkKeaksaraan"></h2>
-								<p>PTK Sekolah Keaksaraan</p>
-							</div>
-						</div>
-						<hr width="75%">
-
-						<!-- Jumlah PD -->
-						<div class="row text-center">
-							<div class="col-md-1"></div>
-							<div class="col-md-2">
-								<h2 id="jumlahPdSD"></h2>
-								<p>Peserta Didik<br/>Sekolah Dasar</p>
-							</div>
-							<div class="col-md-2">
-								<h2 id="jumlahPdSMP"></h2>
-								<p>Peserta Didik<br/>Sekolah Menengah Pertama</p>
-							</div>
-							<div class="col-md-2">
-								<h2 id="jumlahPdSMA"></h2>
-								<p>Peserta Didik<br/>Sekolah Menengah Atas</p>
-							</div>
-							<div class="col-md-2">
-								<h2 id="jumlahPdSMK"></h2>
-								<p>Peserta Didik<br/>Sekolah Menengah Kejuruan</p>
-							</div>
-							<div class="col-md-2">
-								<h2 id="jumlahPdKeaksaraan"></h2>
-								<p>Peserta Didik<br/>Sekolah Keaksaraan</p>
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<div role="tabpanel" class="tab-pane active" id="kependudukan">
+									<div class="row text-center inner-tab-modal">
+										<div class="col-md-3">
+											<i class="fa fa-fw fa-users fa-4x"></i>
+											<h2 id="populasi"></h2>
+											<p>Jumlah Penduduk (2016)</p>
+										</div>
+										<div class="col-md-3">
+											<i class="fa fa-fw fa-globe fa-4x"></i>
+											<h2 id="luasWilayah"></h2>
+											<p>Luas Wilayah (Km<sup>2</sup>)</p>
+										</div>
+										<div class="col-md-3">
+											<i class="fa fa-fw fa-map fa-4x"></i>
+											<h2 id="kawasan"></h2>
+											<p>Kawasan</p>
+										</div>
+										<div class="col-md-3">
+											<i class="fa fa-fw fa-home fa-4x"></i>
+											<h2 id="jumlahKelurahan"></h2>
+											<p>Jumlah Kelurahan</p>
+										</div>
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="statistikPenduduk">
+									<!-- Line Graph Populasi dan Kepdatan Penduduk -->
+									<div class="text-center">
+										<div id="statistik" width="100%"></div>
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="usiaSekolah">
+									<div class="row text-center inner-tab-modal">
+										<div class="col-md-4">
+											<i class="fa fa-fw fa-star fa-4x"></i>
+											<h2 id="usiaSD"></h2>
+											<p>Usia SD (7-12 Tahun)</p>
+										</div>
+										<div class="col-md-4">
+											<i class="fa fa-fw fa-star fa-4x"></i>
+											<i class="fa fa-fw fa-star fa-4x"></i>
+											<h2 id="usiaSMP"></h2>
+											<p>Usia SMP (13-15 Tahun)</p>
+										</div>
+										<div class="col-md-4">
+											<i class="fa fa-fw fa-star fa-4x"></i>
+											<i class="fa fa-fw fa-star fa-4x"></i>
+											<i class="fa fa-fw fa-star fa-4x"></i>
+											<h2 id="usiaSMA"></h2>
+											<p>Usia SMA (16-18 Tahun)</p>
+										</div>
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="sekolahDasar">
+									<!-- Jumlah Sekolah -->
+									<div class="row text-center inner-tab-modal">
+										<div class="col-md-4">
+											<i class="fa fa-fw fa-home fa-4x"></i>
+											<h2 id="jumlahSD"></h2>
+											<p>Sekolah Dasar</p>
+										</div>
+										<div class="col-md-4">
+											<i class="fa fa-fw fa-user fa-4x"></i>
+											<h2 id="jumlahPtkSD"></h2>
+											<p>PTK Sekolah Dasar</p>
+										</div>
+										<div class="col-md-4">
+											<i class="fa fa-fw fa-users fa-4x"></i>
+											<h2 id="jumlahPdSD"></h2>
+											<p>Peserta Didik<br/>Sekolah Dasar</p>
+										</div>
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="sekolahMenengahPertama">
+									<div class="row text-center inner-tab-modal">
+										<div class="col-md-4">
+											<i class="fa fa-fw fa-home fa-4x"></i>
+											<h2 id="jumlahSMP"></h2>
+											<p>Sekolah Menengah Pertama</p>
+										</div>
+										<div class="col-md-4">
+											<i class="fa fa-fw fa-user fa-4x"></i>
+											<h2 id="jumlahPtkSMP"></h2>
+											<p>PTK Sekolah Menengah Pertama</p>
+										</div>
+										<div class="col-md-4">
+											<i class="fa fa-fw fa-users fa-4x"></i>
+											<h2 id="jumlahPdSMP"></h2>
+											<p>Peserta Didik<br/>Sekolah Menengah Pertama</p>
+										</div>
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="sekolahMenengahAtas">
+									<div class="row text-center inner-tab-modal">
+										<div class="col-md-4">
+											<i class="fa fa-fw fa-home fa-4x"></i>
+											<h2 id="jumlahSMA"></h2>
+											<p>Sekolah Menengah Atas</p>
+										</div>
+										<div class="col-md-4">
+											<i class="fa fa-fw fa-user fa-4x"></i>
+											<h2 id="jumlahPtkSMA"></h2>
+											<p>PTK Sekolah Menengah Atas</p>
+										</div>
+										<div class="col-md-4">
+											<i class="fa fa-fw fa-users fa-4x"></i>
+											<h2 id="jumlahPdSMA"></h2>
+											<p>Peserta Didik<br/>Sekolah Menengah Atas</p>
+										</div>
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="sekolahMenengahKejuruan">
+									<div class="row text-center inner-tab-modal">
+										<div class="col-md-4">
+											<i class="fa fa-fw fa-home fa-4x"></i>
+											<h2 id="jumlahSMK"></h2>
+											<p>Sekolah Menengah Kejuruan</p>
+										</div>
+										<div class="col-md-4">
+											<i class="fa fa-fw fa-user fa-4x"></i>
+											<h2 id="jumlahPtkSMK"></h2>
+											<p>PTK Sekolah Menengah Kejuruan</p>
+										</div>
+										<div class="col-md-4">
+											<i class="fa fa-fw fa-users fa-4x"></i>
+											<h2 id="jumlahPdSMK"></h2>
+											<p>Peserta Didik<br/>Sekolah Menengah Kejuruan</p>
+										</div>
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="sekolahKeaksaraan">
+									<div class="row text-center inner-tab-modal">
+										<div class="col-md-4">
+											<i class="fa fa-fw fa-home fa-4x"></i>
+											<h2 id="jumlahKeaksaraan"></h2>
+											<p>Sekolah Keaksaraan</p>
+										</div>
+										<div class="col-md-4">
+											<i class="fa fa-fw fa-user fa-4x"></i>
+											<h2 id="jumlahPtkKeaksaraan"></h2>
+											<p>PTK Sekolah Keaksaraan</p>
+										</div>
+										<div class="col-md-4">
+											<i class="fa fa-fw fa-users fa-4x"></i>
+											<h2 id="jumlahPdKeaksaraan"></h2>
+											<p>Peserta Didik<br/>Sekolah Keaksaraan</p>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

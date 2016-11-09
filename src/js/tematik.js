@@ -163,6 +163,8 @@ function openModal(e) {
 			if (result[i].url == kecamatan) {
 				dataStatistik(result[i]);
 
+				$('#namaKecamatan').text('Demografi Kependudukan & Pendidikan Kecamatan ' + result[i].kecamatan);
+
 				$('#luasWilayah').text(result[i].luas_wilayah);
 				$('#kawasan').text(result[i].kawasan);
 				$('#populasi').text(accounting.formatNumber(result[i].pop_2016, 0, '.'));

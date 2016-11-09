@@ -1,12 +1,11 @@
-body
-{
+body {
 	font-family: 'PT Sans', sans-serif;
 }
 
 html, body, #map {
-            height: 100%;
-            width: 100%;
-        }
+	height: 100%;
+	width: 100%;
+}
 
 .info {
 	padding: 6px 8px;
@@ -21,7 +20,7 @@ path {
 	transition:fill 300ms;
 }
 
-.btn, .modal-content {
+.btn, .modal-content, .nav-tabs > li > a {
 	border-radius: 0px;
 }
 
@@ -45,4 +44,8 @@ path {
 
 td {
 	font-weight: bold;
+}
+
+.inner-tab-modal {
+	padding-top: 20px;
 }
