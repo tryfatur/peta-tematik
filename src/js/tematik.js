@@ -29,7 +29,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{
 
 info.onAdd = function (map) {
 	this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-	this.update();
+	this._div.innerHTML = '<h4><b>Demografi Kependudukan dan Pendidikan Kota Bandung</b></h4>';
 	return this._div;
 };
 
@@ -135,8 +135,6 @@ function highlightFeature(e) {
 	if (!L.Browser.ie && !L.Browser.opera) {
 		layer.bringToFront();
 	}
-
-	info.update(layer.feature.properties);
 }
 
 function resetHighlight(e) {
@@ -150,7 +148,7 @@ function resetHighlight(e) {
 		fillOpacity: 0.9
 	});
 
-	info.update();
+	// info.update();
 }
 
 function openModal(e) {
@@ -201,129 +199,128 @@ function openModal(e) {
 
 //Highchart Statistics
 function dataStatistik(data) {
-	$(function () {
-		$('#statistik').highcharts({
-			chart: {
-				type: 'line',
-				width: 890,
-				style: { fontFamily: 'PT Sans'}
-			},
+	var chart = Highcharts.chart('statistik', {
+		chart: {
+			type: 'line',
+			style: { fontFamily: 'PT Sans'}
+		},
+		title: {
+			text: 'Statistik Kependudukan di Kecamatan ' + data.kecamatan + ' Tahun 2008 - 2016'
+		},
+		subtitle: {
+			text: 'Sumber: Portal Data Bandung'
+		},
+		plotOptions: {
+			line: {
+				dataLabels: {
+					enabled: true
+				},
+				enableMouseTracking: false
+			}
+		},
+		xAxis: {
+			categories: ['2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016'],
 			title: {
-				text: 'Statistik Kependudukan di Kecamatan ' + data.kecamatan + ' Tahun 2008 - 2016'
-			},
-			subtitle: {
-				text: 'Sumber: Portal Data Bandung'
-			},
-			plotOptions: {
-				line: {
-					dataLabels: {
-						enabled: true
-					},
-					enableMouseTracking: false
-				}
-			},
-			xAxis: {
-				categories: ['2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016'],
-				title: {
-					text: 'Tahun'
-				}
-			},
-			yAxis: {
-				min: 0,
-				title: {
-					text: 'Jumlah Penduduk'
-				}
-			},
-			series: [{
-				name: 'Jumlah Populasi',
-				data: [
-					data.pop_2008,
-					data.pop_2009, 
-					data.pop_2010, 
-					data.pop_2011, 
-					data.pop_2012, 
-					data.pop_2013, 
-					data.pop_2014, 
-					data.pop_2015,
-					data.pop_2016
-				]
-			},
-			{
-				name: 'Jumlah Kepadatan Penduduk (km2)',
-				data: [
-					data.pdt_2008, 
-					data.pdt_2009, 
-					data.pdt_2010, 
-					data.pdt_2011, 
-					data.pdt_2012, 
-					data.pdt_2013, 
-					data.pdt_2014, 
-					data.pdt_2015,
-					data.pdt_2016
-				]
-			},
-			{
-				name: 'Jumlah Populasi Pria',
-				data: [
-					data.pop_pria_2008, 
-					data.pop_pria_2009, 
-					data.pop_pria_2010, 
-					data.pop_pria_2011, 
-					data.pop_pria_2012, 
-					data.pop_pria_2013, 
-					data.pop_pria_2014, 
-					data.pop_pria_2015,
-					data.pop_pria_2016
-				],
-				visible: false
-			},
-			{
-				name: 'Jumlah Kepadatan Penduduk Pria (km2)',
-				data: [
-					data.pdt_pria_2008, 
-					data.pdt_pria_2009, 
-					data.pdt_pria_2010, 
-					data.pdt_pria_2011, 
-					data.pdt_pria_2012, 
-					data.pdt_pria_2013, 
-					data.pdt_pria_2014, 
-					data.pdt_pria_2015,
-					data.pdt_pria_2016
-				],
-				visible: false
-			},
-			{
-				name: 'Jumlah Populasi Wanita',
-				data: [
-					data.pop_wanita_2008,
-					data.pop_wanita_2009,
-					data.pop_wanita_2010,
-					data.pop_wanita_2011,
-					data.pop_wanita_2012,
-					data.pop_wanita_2013,
-					data.pop_wanita_2014,
-					data.pop_wanita_2015,
-					data.pop_wanita_2016
-				],
-				visible: false
-			},
-			{
-				name: 'Jumlah Kepadatan Penduduk Wanita (km2)',
-				data: [
-					data.pdt_wanita_2009, 
-					data.pdt_wanita_2009, 
-					data.pdt_wanita_2010, 
-					data.pdt_wanita_2011, 
-					data.pdt_wanita_2012, 
-					data.pdt_wanita_2013, 
-					data.pdt_wanita_2014, 
-					data.pdt_wanita_2015,
-					data.pdt_wanita_2016
-				],
-				visible: false
-			}]
-		});
+				text: 'Tahun'
+			}
+		},
+		yAxis: {
+			min: 0,
+			title: {
+				text: 'Jumlah Penduduk'
+			}
+		},
+		series: [{
+			name: 'Jumlah Populasi',
+			data: [
+				data.pop_2008,
+				data.pop_2009, 
+				data.pop_2010, 
+				data.pop_2011, 
+				data.pop_2012, 
+				data.pop_2013, 
+				data.pop_2014, 
+				data.pop_2015,
+				data.pop_2016
+			]
+		},
+		{
+			name: 'Jumlah Kepadatan Penduduk (km2)',
+			data: [
+				data.pdt_2008, 
+				data.pdt_2009, 
+				data.pdt_2010, 
+				data.pdt_2011, 
+				data.pdt_2012, 
+				data.pdt_2013, 
+				data.pdt_2014, 
+				data.pdt_2015,
+				data.pdt_2016
+			]
+		},
+		{
+			name: 'Jumlah Populasi Pria',
+			data: [
+				data.pop_pria_2008, 
+				data.pop_pria_2009, 
+				data.pop_pria_2010, 
+				data.pop_pria_2011, 
+				data.pop_pria_2012, 
+				data.pop_pria_2013, 
+				data.pop_pria_2014, 
+				data.pop_pria_2015,
+				data.pop_pria_2016
+			],
+			visible: false
+		},
+		{
+			name: 'Jumlah Kepadatan Penduduk Pria (km2)',
+			data: [
+				data.pdt_pria_2008, 
+				data.pdt_pria_2009, 
+				data.pdt_pria_2010, 
+				data.pdt_pria_2011, 
+				data.pdt_pria_2012, 
+				data.pdt_pria_2013, 
+				data.pdt_pria_2014, 
+				data.pdt_pria_2015,
+				data.pdt_pria_2016
+			],
+			visible: false
+		},
+		{
+			name: 'Jumlah Populasi Wanita',
+			data: [
+				data.pop_wanita_2008,
+				data.pop_wanita_2009,
+				data.pop_wanita_2010,
+				data.pop_wanita_2011,
+				data.pop_wanita_2012,
+				data.pop_wanita_2013,
+				data.pop_wanita_2014,
+				data.pop_wanita_2015,
+				data.pop_wanita_2016
+			],
+			visible: false
+		},
+		{
+			name: 'Jumlah Kepadatan Penduduk Wanita (km2)',
+			data: [
+				data.pdt_wanita_2009, 
+				data.pdt_wanita_2009, 
+				data.pdt_wanita_2010, 
+				data.pdt_wanita_2011, 
+				data.pdt_wanita_2012, 
+				data.pdt_wanita_2013, 
+				data.pdt_wanita_2014, 
+				data.pdt_wanita_2015,
+				data.pdt_wanita_2016
+			],
+			visible: false
+		}]
 	});
+
+	return chart;
 }
 
 function onEachFeature(feature, layer) {
@@ -332,6 +329,8 @@ function onEachFeature(feature, layer) {
 		mouseout: resetHighlight,
 		click: openModal
 	});
+
+	layer.bindLabel("Kecamatan " + layer.feature.properties.kecamatan, {permanent: true});
 }
 
 geojson = L.geoJson(baseMap, { style: style, onEachFeature: onEachFeature });
