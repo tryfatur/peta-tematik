@@ -7,6 +7,8 @@ var geojson;
 
 var globalStyle = { weight: 1, opacity: 1, color: 'white', dashArray: '3', fillOpacity: 0.9 };
 
+$(".leaflet-control-zoom").css("visibility", "hidden");
+
 var kategori = [
 	{ "text": "Kepadatan Penduduk", "value": "density" },
 	{ "text": "Kepadatan Penduduk Pria", "value": "densityMale" },
@@ -25,7 +27,7 @@ var tahun = [
 	{ "text": "2008", "value": "2008" }
 ];
 
-L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken).addTo(map);
+L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v9/tiles/256/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken).addTo(map);
 
 info.onAdd = function (map) {
 	this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
@@ -39,7 +41,7 @@ info.update = function (props) {
 		'<b>Kecamatan: ' + props.kecamatan + '</b>' : 'Pilih Kecamatan');
 };
 
-info.addTo(map);
+// info.addTo(map);
 
 datasource.onAdd = function (map) {
 	this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
@@ -48,7 +50,7 @@ datasource.onAdd = function (map) {
 	return this._div;
 };
 
-datasource.addTo(map);
+// datasource.addTo(map);
 
 var grades = {
 	"general": [0, 5000, 10000, 15000, 20000, 25000, 30000, 35000],
@@ -508,5 +510,5 @@ $("#tahun").change(function () {
 	};
 });
 
-map.attributionControl.addAttribution('Data Kependudukan &copy; <a href="http://disdukcapil.bandung.go.id/">Dinas Kependudukan dan Pencatatan Sipil</a>');
-map.attributionControl.addAttribution('<a href="http://portal.bandung.go.id/" target="_blank">Tim Open Data Kota Bandung</a> &copy 2016.');
+// map.attributionControl.addAttribution('Data Kependudukan &copy; <a href="http://disdukcapil.bandung.go.id/">Dinas Kependudukan dan Pencatatan Sipil</a>');
+// map.attributionControl.addAttribution('<a href="http://portal.bandung.go.id/" target="_blank">Tim Open Data Kota Bandung</a> &copy 2016.');
